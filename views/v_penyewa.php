@@ -242,3 +242,5 @@
   </div>
 </div>
 <!-- Menutup modal input data -->
+
+<?php include '..\templates\linkfooter.php' ?>
