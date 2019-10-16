@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<body>
+	Total Tagihan Token Listrik
+	<input type="text" id="token" onkeyup="hitung()"> <br>
+	Total Sewa Kost
+	<input type="text" id="sewa" onkeyup="hitung()"><br>
+	Total Bayar
+	<input type="text" id="total"><br>
+<script>
+	function hitung(){
+		var bayartoken = document.getElementById('token').value;
+		var bayarsewa = document.getElementById('sewa').value;
+		
+		var hasil = parseInt(bayartoken) + parseInt(bayarsewa);
+			if (!isNaN(hasil))
+			{
+				document.getElementById('total').value= hasil;
+			}
+	}
+</script>	
+</body>
+</html>
