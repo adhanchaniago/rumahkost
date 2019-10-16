@@ -1,3 +1,5 @@
+  <?php include '..\templates\linkheader.php' ?>
+
   <!--Main Navigation-->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-2 shadow-none">
@@ -14,7 +16,7 @@
         <div class="collapse navbar-collapse ml-4" id="navResponsive">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <input class="form-control form-control-sm" type="text" placeholder="Mencari..." style="width:300px">
+              <input class="form-control form-control-sm ml-4" type="text" placeholder="Search" style="width:190px">
             </li>
           </ul>
           <ul class="navbar-nav nav-flex-icons">
@@ -27,7 +29,7 @@
                 <img src="..\public\img\fotouser\default.png" class="rounded border" width="35" height="35">
               </a>
 
-              <div class="dropdown-menu dropdown-warning dropdown-menu-right" aria-labelledby="mobil">
+              <div class="dropdown-menu dropdown-primary dropdown-menu-right" aria-labelledby="mobil">
                 <a class="dropdown-item" href="">
                   Edit Profile
                 </a>
@@ -109,3 +111,5 @@
     </div>
   </div>
   <!-- Akhir Nav -->
+
+  <?php include '..\templates\linkfooter.php' ?>

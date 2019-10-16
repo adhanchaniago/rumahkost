@@ -1,4 +1,3 @@
-<?php include '..\templates\linkheader.php' ?>
 <?php include '..\templates\navadmin.php' ?>
 
 <title>Fasilitas</title>
@@ -149,5 +148,3 @@
   </div>
 </div>
 <!-- Menutup modal input data -->
-
-<?php include '../templates/linkfooter.php' ?>
