@@ -1,195 +1,138 @@
-<?php
-if (!isset($_SESSION['Login'])) {
-  Flasher::setFlash('Anda harus login terlebih dahulu', 'danger');
-  header('Location:' . BASEURL . '/auth');
-  exit;
-} else {
-  if ($_SESSION['Login']['RoleId'] !== '1') {
-    Flasher::setFlash('Anda bukan admin', 'danger');
-    header('Location:' . BASEURL . '/' . strtolower($_SESSION['Login']['Role']));
-    exit;
-  }
-}
-?>
-<!--Main Navigation-->
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark indigo accent-2 py-0 shadow-none">
-    <div class="container">
+  <?php include '..\templates\linkheader.php' ?>
 
-      <a class="navbar-brand py-0" href="<?= BASEURL; ?>">
-        <img src="<?= BASEURL; ?>/img/assets/logo.png" width="40" height="40" class="d-inline-block align-top" alt="">
-        <span style="font-size:25px" class="font-weight-bold"><?= APP_NAME; ?></span>
-        <span style="font-size:18px" class="font-weight-thin"><?= APP_TYPE; ?></span>
-      </a>
+  <!--Main Navigation-->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-2 shadow-none">
+      <div class="container">
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navResponsive" aria-controls="navResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse ml-4" id="navResponsive">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <input class="form-control form-control-sm" type="text" placeholder="Cari...">
-          </li>
-        </ul>
-        <ul class="navbar-nav nav-flex-icons">
-          <?php
-          if (!isset($_SESSION['Login'])) : ?>
+        <!-- Nav Brans -->
+        <a class="navbar-brand" href="#">
+          Cost <span style="font-size:25px" class="font-weight-bold">Kost</span>an
+        </a>
+        <!--/ Nav Brans -->
 
-          <?php else : ?>
-            <!-- Jika ada sesi Login -->
-            <li class="nav-item dropdown">
-              <a class="nav-link" id="mobil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="badge badge-light shadow-none mr-2"><?= $_SESSION['Login']['Role'] ?></span>
-                <span style="font-size:15px" class="text-white mr-2 font-weight-regular">
-                  <?= $_SESSION['Login']['Nama'] ?>
-                </span>
-                <img src="<?= BASEURL . '/img/fotouser/' . $_SESSION['Login']['Foto'] ?>" class="rounded border" width="35" height="35">
+        <!-- Button Collapse -->
+        <button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#navResponsive" aria-controls="navResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-search"></i>
+        </button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Avatar" aria-controls="Avatar" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
+        <!--/ Button Collapse -->
+
+        <div class="collapse navbar-collapse" id="navResponsive">
+          <!-- Search Form -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <input class="form-control form-control-sm p-3 mx-auto" type="text" placeholder="Search..." style="width:200px">
+            </li>
+          </ul>
+          <!--/ Search Form -->
+        </div>
+
+
+        <div class="collapse navbar-collapse justify-content-end" id="Avatar">
+
+          <ul class="navbar-nav nav-flex-icons">
+            <!-- Avatar Dropdown -->
+            <li class="nav-item dropdown ml-auto">
+
+              <a class="nav-link" id="kost" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span style="font-size:15px" class="text-white mr-2 font-weight-regular"></span>
+                <img src="..\public\img\fotouser\default.png" class="rounded border" height="35">
               </a>
 
-              <div class="dropdown-menu dropdown-warning dropdown-menu-right" aria-labelledby="mobil">
-                <a class="dropdown-item" href="<?= BASEURL . '/' . $_SESSION['Login']['Role'] . '/userProfile' . '/' . $_SESSION['Login']['Id'] ?>">
+              <div class="dropdown-menu dropdown-primary dropdown-menu-right" aria-labelledby="kost">
+                <a class="dropdown-item" href="#">
                   Edit Profile
                 </a>
-                <a class="dropdown-item" href="<?= BASEURL ?>/auth/SignOut">Logout</a>
+                <a class="dropdown-item" href="#">
+                  Logout
+                </a>
               </div>
+
             </li>
-          <?php endif; ?>
-        </ul>
+            <!--/ Avatar Dropdown -->
+          </ul>
+        </div>
+
       </div>
-    </div>
-  </nav>
-</header>
-<!--Main Navigation-->
+    </nav>
+  </header>
+  <!--/ Main Navigation-->
 
-<!-- Nav -->
-<div class="indigo">
-  <div class="container py-1">
-    <ul id="no-waves" class="nav md-tabs indigo shadow-none mx-0 mb-0">
+  <!-- Nav Menu-->
+  <div class="white sticky-top shadow-sm" style="z-index:1">
+    <div class="container py-2">
+      <ul class="nav md-tabs white shadow-none justify-content-center mb-0">
 
-      <li class="nav-item mr-2">
-        <a class="nav-link <?php if ($data['judul'] == 'Dashboard') echo 'nav-dashboard-active rounded' ?>" href="<?= BASEURL; ?>/admin">
-          <i class="fas fa-tachometer-alt fa-fw mr-1"></i>
-          Dashboard
-        </a>
-      </li>
-
-      <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle 
-        <?php if (
-          $data['judul'] == 'Merk' ||
-          $data['judul'] == 'Tipe' ||
-          $data['judul'] == 'Mobil'
-        )
-          echo 'nav-dashboard-active rounded' ?>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-car fa-fw mr-1"></i>
-          Kendaraan
-        </a>
-        <div class="dropdown-menu dropdown-primary">
-          <a class="dropdown-item <?php if ($data['judul'] == 'Merk') echo 'active' ?>" href="<?= BASEURL ?>/admin/merk">Merk</a>
-          <a class="dropdown-item <?php if ($data['judul'] == 'Tipe') echo 'active' ?>" href="<?= BASEURL ?>/admin/type">Type</a>
-          <a class="dropdown-item <?php if ($data['judul'] == 'Mobil') echo 'active' ?>" href="<?= BASEURL ?>/admin/mobil">Mobil</a> </div>
-      </li>
-
-      <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle
-        <?php if (
-          $data['judul'] == 'Transaksi' ||
-          $data['judul'] == 'Transaksi Selesai' ||
-          $data['judul'] == 'Arsip Transaksi'
-        )
-          echo 'nav-dashboard-active rounded' ?>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-dollar-sign fa-fw mr-1"></i>
-          Transaksi
-        </a>
-        <div class="dropdown-menu dropdown-primary">
-          <a class="dropdown-item <?php if ($data['judul'] == 'Transaksi') echo 'active' ?>" href="<?= BASEURL ?>/admin/transaksi">Transaksi</a>
-          <a class="dropdown-item <?php if ($data['judul'] == 'Transaksi Selesai') echo 'active' ?>" href="<?= BASEURL ?>/admin/transaksi_selesai">Transaksi Selesai</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item <?php if ($data['judul'] == 'Arsip Transaksi') echo 'active' ?>" href="<?= BASEURL ?>/admin/arsip_transaksi">Arsip Transaksi</a>
-        </div>
-      </li>
-
-      <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle
-        <?php if (
-          $data['judul'] == 'Pelanggan' ||
-          $data['judul'] == 'Karyawan' ||
-          $data['judul'] == 'Role' ||
-          $data['judul'] == 'Akun Pending'
-        )
-          echo 'nav-dashboard-active rounded' ?>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-users fa-fw mr-3"></i>
-          Data Akun
-          <?php if ($data['JmlPending'] > 0) echo
-            '<span class="ml-1 badge badge-danger">
-              ' . $data['JmlPending'] . '
-              </span>'
-          ?>
-        </a>
-        <div class="dropdown-menu dropdown-primary">
-          <a class="dropdown-item <?php if ($data['judul'] == 'Pelanggan') echo 'active' ?>" href="<?= BASEURL ?>/admin/pelanggan">Pelanggan</a>
-          <a class="dropdown-item <?php if ($data['judul'] == 'Karyawan') echo 'active' ?>" href="<?= BASEURL ?>/admin/karyawan">Karyawan</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item <?php if ($data['judul'] == 'Akun Pending') echo 'active' ?>" href="<?= BASEURL ?>/admin/pending">
-            Akun Pending
-            <?php if ($data['JmlPending'] > 0) echo
-              '<span class="badge badge-danger float-right">
-              ' . $data['JmlPending'] . '
-              </span>'
-            ?>
+        <!-- Menu 1 -->
+        <li class="nav-item">
+          <a href="..\views\dashboard.php" class="nav-link white-text bg-primary rounded font-weight-bold">
+            <i class="fas fa-tachometer-alt fa-fw mr-1"></i>
+            Dashboard
           </a>
-          <a class="dropdown-item <?php if ($data['judul'] == 'Role') echo 'active' ?>" href="<?= BASEURL ?>/admin/role">User Role</a>
-        </div>
-      </li>
+        </li>
+        <!--/ Menu 1 -->
 
-      <li class="nav-item mr-2">
-        <a class="nav-link <?php if ($data['judul'] == 'Sopir') echo 'nav-dashboard-active rounded' ?>" href="<?= BASEURL ?>/admin/sopir">
-          <i class="fas fa-user-tie fa-fw mr-1"></i>
-          Data Sopir
-        </a>
-      </li>
+        <!-- Menu 2 -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-primary" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-tasks fa-fw mr-1"></i>
+            Manajemen
+          </a>
+          <div class="dropdown-menu dropdown-primary">
+            <a href="..\views\v_fasilitas.php" class="dropdown-item">
+              Fasilitas
+            </a>
+            <a href="..\views\v_kamar.php" class="dropdown-item">
+              Kamar
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="..\views\v_biaya.php" class="dropdown-item">
+              Token Listrik
+            </a>
+          </div>
+        </li>
+        <!--/ Menu 2 -->
 
-      <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-print fa-fw mr-1"></i>
-          Laporan
-        </a>
-        <div class="dropdown-menu dropdown-primary">
-          <a class="dropdown-item" href="#">Transaksi</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Kendaraan</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Karyawan</a>
-          <a class="dropdown-item" href="#">Pelanggan</a>
-        </div>
-      </li>
 
-    </ul>
-  </div>
-</div>
-<!-- Akhir Nav -->
+        <!-- Menu 3 -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-primary" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-dollar-sign fa-fw"></i>
+            Transaksi
+          </a>
+          <div class="dropdown-menu dropdown-primary">
+            <a href="#" class="dropdown-item">
+              Kamar
+            </a>
+            <a href="..\views\v_transaksi_token.php" class="dropdown-item">
+              Token Listrik
+            </a>
+          </div>
+        </li>
+        <!--/ Menu 3 -->
 
-<div class="indigo shadow-sm" id="top-main">
-  <div class="container">
-    <div class="pt-5 pb-1">
-      <h2 class="h1 text-white"><?= strtoupper($data['judul']) ?></h2>
+        <!-- Menu 4 -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-primary" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-users fa-fw mr-1"></i>
+            Data AKun
+          </a>
+          <div class="dropdown-menu dropdown-primary">
+            <a href="#" class="dropdown-item">
+              Pemilik
+            </a>
+            <a href="..\views\v_penyewa.php" class="dropdown-item">
+              Penyewa
+            </a>
+          </div>
+        </li>
+        <!--/ Menu 4 -->
+
+      </ul>
     </div>
-    <div class="pb-5" id="breadcrump">
-      <span style="font-size:17px" class="text-white">
-        <i class="fa fa-home fa-fw"></i>
-        <span class="mx-3">|</span>
-        <span>Home</span>
-        <i class="fa fa-angle-right fa-fw mx-2"></i>
-        <span>Dashboard</span>
-        <?php
-        if (!isset($data['url'][1])) : ?>
-        <?php else : ?>
-          <i class="fa fa-angle-right fa-fw mx-2"></i>
-          <span>
-            <?= ucfirst($data['url'][1]) ?>
-          </span>
-        <?php endif; ?>
-      </span>
-    </div>
   </div>
-</div>
+  <!-- Akhir Nav -->

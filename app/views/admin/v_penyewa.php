@@ -229,7 +229,7 @@
           </div>
           <div class="form-group">
             <label for="tglmasuk">Tanggal Masuk</label>
-            <input type='date' name="tglmasuk" class="form-control" id='tglmasuk' required>
+            <input type='text' name="tglmasuk" class="form-control datepicker" id='tglmasuk' required>
           </div>
       </div>
 

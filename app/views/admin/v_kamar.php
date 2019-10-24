@@ -10,16 +10,16 @@
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
-  <div class="bg-white shadow-sm rounded pt-5 pb-5 px-5 mt-5">
 
+  <div class="bg-white shadow-sm rounded pt-5 pb-5 px-5 mt-5">
     <div class="panel panel-default">
       <div class="panel-body">
-        <?php include '../templates/alert.php' ?>
+        <?php include '..\templates\alert.php' ?>
         <div>
-          <table id="dt" class="table table-bordered table-striped">
+          <table id="dt" class="table table-hover">
             <thead>
-              <tr class="text-center">
-                <th>ID Kamar</th>
+              <tr class="text-center white-text bg-primary">
+                <th>#</th>
                 <th>Kode Kamar</th>
                 <th>Fasilitas</th>
                 <th>Tarif</th>
@@ -28,7 +28,7 @@
             </thead>
             <tbody>
               <?php
-              include('../config/koneksi.php');
+              include('..\..\config\koneksi.php');
 
               $query = mysqli_query($konekdb, "SELECT * FROM view_kamar");
               while ($row = mysqli_fetch_array($query)) {
@@ -39,8 +39,8 @@
                   <td class="align-middle"><?php echo $row['nm_fasilitas']; ?></td>
                   <td class="align-middle">Rp. <span class="uang"><?php echo  $row['tarif']; ?></span>,-</td>
                   <td>
-                    <button type="button" name="edit" class="btn btn-warning rounded text-white" data-toggle="modal" data-target="#ModalEditData<?php echo $row['id_kamar']; ?>"><i class="fas fa-fw fa-edit"></i></button>
-                    <button type="button" name="hapus" class="btn btn-danger rounded" data-toggle="modal" data-target="#ModalHapusData<?php echo $row['id_kamar']; ?>"><i class="fas fa-fw fa-trash"></i></button>
+                    <button type="button" name="edit" class="btn btn-warning shadow-none rounded text-white" data-toggle="modal" data-target="#ModalEditData<?php echo $row['id_kamar']; ?>"><i class="fas fa-fw fa-edit"></i></button>
+                    <button type="button" name="hapus" class="btn btn-danger shadow-none rounded" data-toggle="modal" data-target="#ModalHapusData<?php echo $row['id_kamar']; ?>"><i class="fas fa-fw fa-trash"></i></button>
                   </td>
                 </tr>
 
@@ -49,14 +49,11 @@
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                       <div class="modal-header text-center">
-                        <h4 class="modal-title w-100 font-weight-bold text-warning ml-5">Edit</h4>
-                        <button type="button" class="close text-warning" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
+                        <h4 class="modal-title w-100 font-weight-bold text-warning">EDIT</h4>
                       </div>
 
                       <div class="modal-body">
-                        <form action="../models/updates/u_kamar.php" method="post" role="form">
+                        <form action="..\..\models\updates\u_kamar.php" method="post" role="form">
                           <?php
                             $idkamar = $row['id_kamar'];
                             $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_kamar WHERE id_kamar='$idkamar'");
@@ -88,8 +85,9 @@
                             </div>
                       </div>
 
-                      <div class="modal-footer">
-                        <button type="submit" class="btn btn-outline-warning btn-block">Update</button>
+                      <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-warning">UPDATE</button>
+                        <button type="button" class="btn btn-outline-warning">NO</button>
                       </div>
                     <?php
                       }
@@ -105,14 +103,11 @@
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content text-center">
                       <div class="modal-header">
-                        <h4 class="modal-title w-100 font-weight-bold text-danger ml-5">Delete</h4>
-                        <button type=" button" class="close text-danger" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
+                        <h4 class="modal-title w-100 font-weight-bold text-danger">DELETE</h4>
                       </div>
 
                       <div class="modal-body">
-                        <form action="../models/deletes/d_kamar.php" method="post" role="form">
+                        <form action="..\..\models\deletes\d_kamar.php" method="post" role="form">
                           <input type="hidden" name="idkamar" class="form-control" value="<?php echo $row['id_kamar']; ?>">
                           <center>
                             <h4>Yakin data akan dihapus ?</h4>
@@ -120,8 +115,8 @@
                       </div>
 
                       <div class="modal-footer flex-center">
-                        <button type="submit" class="btn btn-outline-danger">Yes</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                        <button type="submit" class="btn btn-outline-danger">YES</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">NO</button>
                       </div>
 
                       </form>
@@ -146,16 +141,13 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold text-primary ml-5">Input</h4>
-        <button type="button" class="close text-primary" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h4 class="modal-title w-100 font-weight-bold text-primary">INPUT</h4>
       </div>
       <div class="modal-body">
-        <form action="../models/saves/s_kamar.php" method="post" role="form" name="forminput" id="forminput">
+        <form action="..\..\models\saves\s_kamar.php" method="post" role="form" name="forminput" id="forminput">
           <div class="form-group">
             <?php
-            include '..\models\functions\auto_number.php';
+            include '..\..\models\functions\auto_number.php';
             $query = mysqli_query($konekdb, "SELECT * FROM tbl_kamar ORDER BY kode_kamar DESC LIMIT 1");
             $latestKD = mysqli_fetch_assoc($query);
             $kodeKamar = autonumber($latestKD['kode_kamar'], 2, 3);
@@ -177,18 +169,23 @@
           </div>
           <div class="form-group">
             <label for="tarif">Tarif</label>
-            <input type="text" name="tarif" id="tarif" class="form-control uang" required>
-          </div>
-      </div>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"">Rp.</span>
+              </div>
+              <input type=" text" name="tarif" id="tarif" class="form-control uang" required>
+              </div>
+            </div>
 
-      <div class="modal-footer">
-        <button type="submit" name="submit" id="kodekamar" class="btn btn-outline-primary btn-block">ADD</button>
-      </div>
+            <div class="modal-footer justify-content-center">
+              <button type="submit" name="submit" id="kodekamar" class="btn btn-primary">ADD</button>
+              <button type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">NO</button>
+            </div>
 
-      </form>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-<!-- Menutup modal input data -->
+  <!-- Menutup modal input data -->
 
-<?php include '..\templates\linkfooter.php' ?>
+  <?php include '..\templates\linkfooter.php' ?>

@@ -6,7 +6,7 @@ $jk = $_POST['jk'];
 $pekerjaan = $_POST['pekerjaan'];
 $nohandphone = preg_replace('/\D/', '', $_POST['nohandphone']);
 $kodekamar = $_POST['kodekamar'];
-$tglmasuk = $_POST['tglmasuk'];
+$tglmasuk = $_POST['tglmasuk_submit'];
 $tglexpiresewa = date('Y-m-d', strtotime('+1 month', strtotime($tglmasuk)));
 
 include("../../config/koneksi.php");

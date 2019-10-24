@@ -16,29 +16,29 @@
       <div class="panel-body">
         <?php include '../templates/alert.php' ?>
         <div>
-          <table id="dt" class="table table-bordered table-striped">
+          <table id="dt" class="table table-hover">
             <thead>
-              <tr class="text-center">
-                <th>ID Biaya</th>
+              <tr class="text-center white-text bg-primary">
+                <th>#</th>
                 <th>Token Listrik</th>
-                <th>Jumlah Biaya</th>
+                <th>Harga Token</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
               <?php
-              include('../config/koneksi.php');
+              include('..\..\config\koneksi.php');
 
               $query = mysqli_query($konekdb, "SELECT * FROM tbl_biaya");
               while ($row = mysqli_fetch_array($query)) {
                 ?>
                 <tr class="text-center">
                   <td class="align-middle"><?php echo $row['id_biaya']; ?></td>
-                  <td class="align-middle"><?php echo $row['token_listrik']; ?></td>
+                  <td class="align-middle">TKN <?php echo  $row['token_listrik']; ?></td>
                   <td class="align-middle">Rp. <span class="uang"><?php echo  $row['jumlah_biaya']; ?></span>,-</td>
                   <td>
-                    <button type="button" name="edit" class="btn btn-warning rounded text-white" data-toggle="modal" data-target="#ModalEditData<?php echo $row['id_biaya']; ?>"><i class="fas fa-fw fa-edit"></i></button>
-                    <button type="button" name="hapus" class="btn btn-danger rounded" data-toggle="modal" data-target="#ModalHapusData<?php echo $row['id_biaya']; ?>"><i class="fas fa-fw fa-trash"></i></button>
+                    <button type="button" name="edit" class="btn btn-warning shadow-none rounded text-white" data-toggle="modal" data-target="#ModalEditData<?php echo $row['id_biaya']; ?>"><i class="fas fa-fw fa-edit"></i></button>
+                    <button type="button" name="hapus" class="btn btn-danger shadow-none rounded" data-toggle="modal" data-target="#ModalHapusData<?php echo $row['id_biaya']; ?>"><i class="fas fa-fw fa-trash"></i></button>
                   </td>
                 </tr>
 
@@ -47,14 +47,11 @@
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                       <div class="modal-header text-center">
-                        <h4 class="modal-title w-100 font-weight-bold text-warning ml-5">Edit</h4>
-                        <button type="button" class="close text-warning" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
+                        <h4 class="modal-title w-100 font-weight-bold text-warning ">EDIT</h4>
                       </div>
 
                       <div class="modal-body">
-                        <form action="../models/updates/u_biaya.php" method="post" role="form">
+                        <form action="..\..\models\updates\u_biaya.php" method="post" role="form">
                           <?php
                             $idbiaya = $row['id_biaya'];
                             $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_biaya WHERE id_biaya='$idbiaya'");
@@ -74,9 +71,11 @@
                             </div>
                       </div>
 
-                      <div class="modal-footer flex-center">
-                        <button type="submit" class="btn btn-outline-warning btn-block">Update</button>
+                      <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-warning">UPDATE</button>
+                        <button type="text" class="btn btn-outline-warning waves-effect" data-dismiss="modal">NO</button>
                       </div>
+
                     <?php
                       }
                       ?>
@@ -91,23 +90,20 @@
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content text-center">
                       <div class="modal-header">
-                        <h4 class="modal-title w-100 font-weight-bold text-danger ml-5">Delete</h4>
-                        <button type=" button" class="close text-danger" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
+                        <h4 class="modal-title w-100 font-weight-bold text-danger">DELETE</h4>
                       </div>
 
                       <div class="modal-body">
-                        <form action="../models/deletes/d_biaya.php" method="post" role="form">
+                        <form action="..\..\models\deletes\d_biaya.php" method="post" role="form">
                           <input type="hidden" name="idbiaya" class="form-control" value="<?php echo $row['id_biaya']; ?>">
                           <center>
                             <h4>Yakin data akan dihapus ?</h4>
                           </center>
                       </div>
 
-                      <div class="modal-footer flex-center">
-                        <button type="submit" class="btn btn-outline-danger">Yes</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                      <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-outline-danger">YES</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">NO</button>
                       </div>
 
                       </form>
@@ -132,31 +128,39 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold text-primary ml-5">Input</h4>
-        <button type="button" class="close text-primary" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h4 class="modal-title w-100 font-weight-bold text-primary">INPUT</h4>
       </div>
+
       <div class="modal-body">
-        <form action="../models/saves/s_biaya.php" method="post" role="form" name="forminput" id="forminput">
+        <form action="..\..\models\saves\s_biaya.php" method="post" role="form" name="forminput" id="forminput">
           <div class="form-group">
             <label for="tokenlistrik">Token Listrik</label>
-            <input type="text" name="tokenlistrik" id="tokenlistrik" class="form-control" required autofocus>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">TKN</span>
+              </div>
+              <input type="text" name="tokenlistrik" id="tokenlistrik" class="form-control uang" required>
+            </div>&nbsp;
+            <div class="form-group">
+              <label for="jumlahbiaya">Harga Token</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Rp.</span>
+                </div>
+                <input type="text" name="jumlahbiaya" id="jumlahbiaya" class="form-control uang" required>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="jumlahbiaya">Harga Token</label>
-            <input type="text" name="jumlahbiaya" id="jumlahbiaya" class="form-control uang" required>
+
+          <div class="modal-footer justify-content-center">
+            <button type="submit" name="submit" id="tokenlistrik" class="btn btn-primary">ADD</button>
+            <button type="text" class="btn btn-outline-primary waves-effect" data-dismiss="modal">NO</button>
           </div>
-      </div>
 
-      <div class="modal-footer flex-center">
-        <button type="submit" name="submit" id="tokenlistrik" class="btn btn-outline-primary btn-block">ADD</button>
+        </form>
       </div>
-
-      </form>
     </div>
   </div>
-</div>
-<!-- Menutup modal input data -->
+  <!-- Menutup modal input data -->
 
-<?php include '..\templates\linkfooter.php' ?>
+  <?php include '..\templates\linkfooter.php' ?>

@@ -1,4 +1,4 @@
-<script src="..\public\vendor\MaterialBootstrap\js\jquery-3.4.1.min.js"></script>
+<script src="..\..\..\public\vendor\MaterialBootstrap\js\jquery-3.4.1.min.js"></script>
 
 <?php
 if (isset($_GET['alert_simpan'])) {
