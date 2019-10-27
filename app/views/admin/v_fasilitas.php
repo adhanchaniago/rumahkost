@@ -1,4 +1,4 @@
-<?php include '..\templates\navadmin.php' ?>
+<?php include '../templates/navadmin.php' ?>
 
 <title>Fasilitas</title>
 
@@ -14,7 +14,7 @@
 
     <div class="panel panel-default">
       <div class="panel-body">
-        <?php include '..\templates\alert.php' ?>
+        <?php include '../templates/alert.php' ?>
         <div>
           <table id="dt" class="table table-hover">
             <thead class="bg-primary text-white">
@@ -26,7 +26,7 @@
             </thead>
             <tbody>
               <?php
-              include('..\..\config\koneksi.php');
+              include('../../config/koneksi.php');
 
               $query = mysqli_query($konekdb, "SELECT * FROM tbl_fasilitas");
               while ($row = mysqli_fetch_array($query)) {
@@ -35,8 +35,8 @@
                   <td class="align-middle"><?php echo $row['id_fasilitas']; ?></td>
                   <td class="align-middle"><?php echo $row['nm_fasilitas']; ?></td>
                   <td>
-                    <button type="button" name="edit" class="btn btn-warning shadow-none rounded text-white" data-toggle="modal" data-target="#ModalEditData<?php echo $row['id_fasilitas']; ?>"><i class="fas fa-fw fa-edit"></i></button>
-                    <button type="button" name="hapus" class="btn btn-danger shadow-none rounded" data-toggle="modal" data-target="#ModalHapusData<?php echo $row['id_fasilitas']; ?>"><i class="fas fa-fw fa-trash"></i></button>
+                    <button type="button" name="edit" class="btn btn-sm btn-warning shadow-none rounded text-white" data-toggle="modal" data-target="#ModalEditData<?php echo $row['id_fasilitas']; ?>"><i class="fas fa-fw fa-edit"></i></button>
+                    <button type="button" name="hapus" class="btn btn-sm btn-danger shadow-none rounded" data-toggle="modal" data-target="#ModalHapusData<?php echo $row['id_fasilitas']; ?>"><i class="fas fa-fw fa-trash"></i></button>
                   </td>
                 </tr>
 
@@ -49,7 +49,7 @@
                       </div>
 
                       <div class="modal-body">
-                        <form action="..\..\models\updates\u_fasilitas.php" method="post" role="form">
+                        <form action="../../models/updates/u_fasilitas.php" method="post" role="form">
                           <?php
                             $idfasilitas = $row['id_fasilitas'];
                             $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_fasilitas WHERE id_fasilitas='$idfasilitas'");
@@ -87,7 +87,7 @@
                       </div>
 
                       <div class="modal-body">
-                        <form action="..\..\models\deletes\d_fasilitas.php" method="post" role="form">
+                        <form action="../../models/deletes/d_fasilitas.php" method="post" role="form">
                           <input type="hidden" name="idfasilitas" class="form-control" value="<?php echo $row['id_fasilitas']; ?>">
                           <center>
                             <h4>Yakin data akan dihapus ?</h4>
@@ -124,7 +124,7 @@
         <h4 class="modal-title w-100 font-weight-bold text-primary">INPUT</h4>
       </div>
       <div class="modal-body">
-        <form action="..\..\models\saves\s_fasilitas.php" method="post" role="form" name="forminput" id="forminput">
+        <form action="../../models/saves/s_fasilitas.php" method="post" role="form" name="forminput" id="forminput">
           <div class="form-group">
             <label for="nmfasilitas">Nama Fasilitas</label>
             <input type="text" name="nmfasilitas" id="nmfasilitas" class="form-control" required autofocus>
@@ -142,4 +142,4 @@
 </div>
 <!-- Menutup modal input data -->
 
-<?php include '..\templates\linkfooter.php' ?>
+<?php include '../templates/linkfooter.php' ?>

@@ -1,4 +1,4 @@
-<?php include '..\templates\navadmin.php' ?>
+<?php include '../templates/navadmin.php' ?>
 
 <title>Dashboard</title>
 
@@ -9,4 +9,4 @@
 </div>
 <!-- Menutup modal input data -->
 
-<?php include '..\templates\linkfooter.php' ?>
+<?php include '../templates/linkfooter.php' ?>

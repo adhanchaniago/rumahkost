@@ -42,7 +42,7 @@
     <ul class="nav md-tabs bg-transparent shadow-none mx-0 mb-0 pl-0">
 
       <li class="nav-item mr-2">
-        <a href="dashboard.php" class="nav-link text-white bg-primary accent-4 rounded">Dashboard</a>
+        <a href="dashboard.php" class="nav-link text-white bg-primary rounded ">Dashboard</a>
       </li>
 
       <li class="nav-item dropdown mr-2">

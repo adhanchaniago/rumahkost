@@ -1,4 +1,4 @@
-<?php include '..\templates\navadmin.php' ?>
+<?php include '../templates/navadmin.php' ?>
 
 <title>Token Listrik</title>
 
@@ -27,7 +27,7 @@
             </thead>
             <tbody>
               <?php
-              include('..\..\config\koneksi.php');
+              include('../../config/koneksi.php');
 
               $query = mysqli_query($konekdb, "SELECT * FROM tbl_biaya");
               while ($row = mysqli_fetch_array($query)) {
@@ -37,8 +37,8 @@
                   <td class="align-middle">TKN <?php echo  $row['token_listrik']; ?></td>
                   <td class="align-middle">Rp. <span class="uang"><?php echo  $row['jumlah_biaya']; ?></span>,-</td>
                   <td>
-                    <button type="button" name="edit" class="btn btn-warning shadow-none rounded text-white" data-toggle="modal" data-target="#ModalEditData<?php echo $row['id_biaya']; ?>"><i class="fas fa-fw fa-edit"></i></button>
-                    <button type="button" name="hapus" class="btn btn-danger shadow-none rounded" data-toggle="modal" data-target="#ModalHapusData<?php echo $row['id_biaya']; ?>"><i class="fas fa-fw fa-trash"></i></button>
+                    <button type="button" name="edit" class="btn btn-sm btn-warning shadow-none rounded text-white" data-toggle="modal" data-target="#ModalEditData<?php echo $row['id_biaya']; ?>"><i class="fas fa-fw fa-edit"></i></button>
+                    <button type="button" name="hapus" class="btn btn-sm btn-danger shadow-none rounded" data-toggle="modal" data-target="#ModalHapusData<?php echo $row['id_biaya']; ?>"><i class="fas fa-fw fa-trash"></i></button>
                   </td>
                 </tr>
 
@@ -51,7 +51,7 @@
                       </div>
 
                       <div class="modal-body">
-                        <form action="..\..\models\updates\u_biaya.php" method="post" role="form">
+                        <form action="../../models/updates/u_biaya.php" method="post" role="form">
                           <?php
                             $idbiaya = $row['id_biaya'];
                             $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_biaya WHERE id_biaya='$idbiaya'");
@@ -94,7 +94,7 @@
                       </div>
 
                       <div class="modal-body">
-                        <form action="..\..\models\deletes\d_biaya.php" method="post" role="form">
+                        <form action="../../models/deletes/d_biaya.php" method="post" role="form">
                           <input type="hidden" name="idbiaya" class="form-control" value="<?php echo $row['id_biaya']; ?>">
                           <center>
                             <h4>Yakin data akan dihapus ?</h4>
@@ -132,7 +132,7 @@
       </div>
 
       <div class="modal-body">
-        <form action="..\..\models\saves\s_biaya.php" method="post" role="form" name="forminput" id="forminput">
+        <form action="../../models/saves/s_biaya.php" method="post" role="form" name="forminput" id="forminput">
           <div class="form-group">
             <label for="tokenlistrik">Token Listrik</label>
             <div class="input-group">
@@ -163,4 +163,4 @@
   </div>
   <!-- Menutup modal input data -->
 
-  <?php include '..\templates\linkfooter.php' ?>
+  <?php include '../templates/linkfooter.php' ?>
