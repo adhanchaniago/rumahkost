@@ -1,5 +1,3 @@
-<?php include '..\templates\linkheader.php' ?>
-
 <!--Main Navigation-->
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3 shadow-none">

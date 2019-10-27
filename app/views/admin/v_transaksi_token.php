@@ -1,4 +1,5 @@
-<?php include '..\templates\navadmin.php' ?>
+<?php include '../templates/linkheader.php' ?>
+<?php include '../templates/navadmin.php' ?>
 
 <title>Transaksi Listrik</title>
 
@@ -32,7 +33,7 @@
   <div class="bg-white shadow-sm rounded pt-4 pb-4 px-5 mt-4">
     <div class="panel panel-default">
       <div class="panel-body">
-        <?php include '..\templates\alert.php' ?>
+        <?php include '../templates/alert.php' ?>
         <div class="data"></div>
       </div>
     </div>
@@ -48,7 +49,7 @@
       </div>
 
       <div class="modal-body">
-        <form action="..\..\models\saves\s_transaksi_token.php" method="post" role="form" name="forminput" id="forminput">
+        <form action="../../models/saves/s_transaksi_token.php" method="post" role="form" name="forminput" id="forminput">
           <div class="form-group">
             <label for="tgltransaksi">Tanggal Transaksi</label>
             <input type='text' name="tgltransaksi" class="form-control" id='tgltransaksi' required readonly value="<?= date('Y-m-d') ?>">
@@ -99,4 +100,4 @@
 </div>
 <!-- Menutup modal input data -->
 
-<?php include '..\templates\linkfooter.php' ?>
+<?php include '../templates/linkfooter.php' ?>

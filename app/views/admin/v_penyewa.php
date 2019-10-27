@@ -1,3 +1,4 @@
+<?php include '../templates/linkheader.php' ?>
 <?php include '../templates/navadmin.php' ?>
 
 <title>Penyewa</title>
