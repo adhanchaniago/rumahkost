@@ -33,7 +33,7 @@
             </thead>
             <tbody>
               <?php
-              include('../config/koneksi.php');
+              include('../../config/koneksi.php');
 
               $query = mysqli_query($konekdb, "SELECT * FROM view_penyewa");
               while ($row = mysqli_fetch_array($query)) {

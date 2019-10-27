@@ -3,57 +3,37 @@
 <title>Transaksi Listrik</title>
 
 <div class="container mt-5 mb-5">
-  <h2 class="h1 text-black-50 d-inline">
-    LISTRIK
-  </h2>
+  <h2 class="h1 text-black-50 d-inline">LISTRIK</h2>
   <button type="button" name="tambah" class="btn btn-primary rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
-  <div class="bg-white shadow-sm rounded pt-5 pb-5 px-5 mt-5">
 
+  <div class="bg-white shadow-sm rounded pt-3 pb-4 px-5 mt-5">
+    <div>
+      <label class="mdb-main-label text-dark">Pilih Peroide</label>
+      <select class="form-control browser-default bulan">
+        <option value="0">Semua</option>
+        <option value="01">Januari</option>
+        <option value="02">Februari</option>
+        <option value="03">Maret</option>
+        <option value="04">April</option>
+        <option value="05">Mei</option>
+        <option value="06">Juni</option>
+        <option value="07">Juli</option>
+        <option value="08">Agustus</option>
+        <option value="09">September</option>
+        <option value="10">Oktober</option>
+        <option value="11">November</option>
+        <option value="12">Desember</option>
+      </select>
+    </div>
+  </div>
+  <div class="bg-white shadow-sm rounded pt-4 pb-4 px-5 mt-4">
     <div class="panel panel-default">
       <div class="panel-body">
         <?php include '..\templates\alert.php' ?>
-        <div>
-          <table id="dt" class="table table-hover">
-            <thead>
-              <tr class="text-center white-text bg-primary">
-                <th>#</th>
-                <th>Tgl Transaksi</th>
-                <th>Penyewa</th>
-                <th>Token Listrik</th>
-                <th>Harga</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php
-              include('..\..\config\koneksi.php');
-
-              $query = mysqli_query($konekdb, "SELECT * FROM view_transaksi_listrik");
-              while ($row = mysqli_fetch_array($query)) {
-                ?>
-
-                <tr class="text-center">
-                  <td class="align-middle"><?php echo $row['id_transaksi']; ?></td>
-                  <td class="align-middle"><?php echo $row['tgl_transaksi']; ?></td>
-                  <td class="align-middle"><?php echo $row['nama']; ?></td>
-                  <td class="align-middle"><?php echo $row['token_listrik']; ?></td>
-                  <td class="align-middle">Rp. <span class="uang"><?php echo $row['jumlah_biaya']; ?></span>,-</td>
-                  <!-- Status -->
-                  <select class="browser-default custom-select" name="Status" id="Status">
-                    <option value="1">Lunas</option>
-                    <option value="2" selected>Belum Lunas</option>
-                  </select>
-                </tr>
-
-              <?php
-              }
-              ?>
-            </tbody>
-          </table>
-        </div>
+        <div class="data"></div>
       </div>
     </div>
   </div>
@@ -103,7 +83,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">Rp.</span>
               </div>
-              <input type="text" class="form-control uang" id="jumlahbiaya" required readonly autocomplete="off">
+              <input type="text" class="form-control uang" id="jumlahbiaya" name="jumlahbiaya" required readonly autocomplete="off">
             </div>
           </div>
       </div>

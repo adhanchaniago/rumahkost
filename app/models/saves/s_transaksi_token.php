@@ -7,6 +7,6 @@ $jumlahbiaya = $_POST['jumlahbiaya'];
 
 include("..\..\config\koneksi.php");
 
-$hasil = mysqli_query($konekdb, "INSERT INTO tbl_transaksi_token VALUES('id_transaksi','$tgltransaksi','$idpenyewa','$idbiaya','$jumlahbiaya','status_bayar')");
+$hasil = mysqli_query($konekdb, "INSERT INTO tbl_transaksi_listrik VALUES('','$tgltransaksi','$idpenyewa','$idbiaya','$jumlahbiaya','Belum Lunas')");
 
 header('Location:..\..\views\admin\v_transaksi_token.php?alert_simpan');
