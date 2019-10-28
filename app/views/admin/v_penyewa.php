@@ -4,10 +4,10 @@
 <title>Penyewa</title>
 
 <div class="container mt-5 mb-5">
-  <h2 class="h1 text-black-50 d-inline">
+  <h2 class="h1 text-black d-inline">
     PENYEWA
   </h2>
-  <button type="button" name="tambah" class="btn btn-primary rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
+  <button type="button" name="tambah" class="btn btn-success rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
@@ -15,22 +15,22 @@
     <span class="text-black-50" style="font-size:17px">
       <i class="fa fa-home fa-fw font-weight-bold"></i>
       <span class="mx-3 font-weight-bold">|</span>
-      <span class="font-weight-bold">Home</span>
+      <span class="font-weight-bold">Dashboard</span>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
-      <span class="font-weight-bold">Data Akun</span>
+      <span class="font-weight-bold">Data</span>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <span>Penyewa</span>
     </span>
   </div>
 
-  <div class="bg-white shadow-sm rounded pt-5 pb-5 px-5 mt-5">
+  <div class="bg-white shadow-sm rounded pt-5 pb-5 px-5 mt-4">
     <div class="panel panel-default">
       <div class="panel-body">
         <?php include '../templates/alert.php' ?>
         <div>
           <table id="dt" class="table table-hover">
-            <thead class="bg-primary text-white">
-              <tr class="text-center">
+            <thead class="header">
+              <tr class="text-center text-white">
                 <th>#</th>
                 <th>No.KTP</th>
                 <th>Nama</th>
@@ -187,7 +187,7 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold text-primary">INPUT</h4>
+        <h4 class="modal-title w-100 font-weight-bold text-success">INPUT</h4>
       </div>
       <div class="modal-body">
         <form action="../../models/saves/s_penyewa.php" method="post" role="form" name="forminput" id="forminput">
@@ -239,8 +239,8 @@
       </div>
 
       <div class="modal-footer justify-content-center">
-        <button type="submit" name="submit" id="noktp" class="btn btn-primary">ADD</button>
-        <button type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">NO</button>
+        <button type="submit" name="submit" id="noktp" class="btn btn-success">ADD</button>
+        <button type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">NO</button>
       </div>
 
       </form>

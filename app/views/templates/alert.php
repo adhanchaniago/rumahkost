@@ -1,14 +1,9 @@
-<script src="..\..\..\public\vendor\MaterialBootstrap\js\jquery-3.4.1.min.js"></script>
+<script src="../../../public/vendor/MaterialBootstrap/js/jquery-3.4.1.min.js"></script>
 
 <?php
 if (isset($_GET['alert_simpan'])) {
-  echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Tambah Data!</strong> Data berhasil di simpan.
-            </div>';
-}
-if (isset($_GET['alert_kembar'])) {
-  echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">
-                <strong>Kembar Data!</strong> Data Sudah Pernah di simpan.
             </div>';
 }
 if (isset($_GET['alert_edit'])) {
@@ -22,7 +17,7 @@ if (isset($_GET['alert_hapus'])) {
             </div>';
 }
 if (isset($_GET['alert_terpakai'])) {
-  echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  echo '<div class="alert alert-info alert-dismissible fade show" role="alert">
                 <strong>Data tidak terhapus!</strong> Data sedang di gunakan.
             </div>';
 }
@@ -32,6 +27,6 @@ if (isset($_GET['alert_terpakai'])) {
   $(document).ready(function() {
     setInterval(function() {
       $(".alert").hide(900);
-    }, 3000);
+    }, 5000);
   })
 </script>

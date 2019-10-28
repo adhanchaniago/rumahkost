@@ -26,4 +26,4 @@
 
 </head>
 
-<body class="grey lighten-5">
+<body class="grey lighten-4">

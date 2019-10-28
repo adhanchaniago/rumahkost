@@ -4,10 +4,10 @@
 <title>Token Listrik</title>
 
 <div class="container mt-5 mb-5">
-  <h2 class="h1 text-black-50 d-inline">
+  <h2 class="h1 text-black d-inline">
     TOKEN LISTRIK
   </h2>
-  <button type="button" name="tambah" class="btn btn-primary rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
+  <button type="button" name="tambah" class="btn btn-success rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
@@ -15,7 +15,7 @@
     <span class="text-black-50" style="font-size:17px">
       <i class="fa fa-home fa-fw font-weight-bold"></i>
       <span class="mx-3 font-weight-bold">|</span>
-      <span class="font-weight-bold">Home</span>
+      <span class="font-weight-bold">Dashboard</span>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <span class="font-weight-bold">Manajemen</span>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
@@ -23,14 +23,14 @@
     </span>
   </div>
 
-  <div class="bg-white shadow-sm rounded pt-5 pb-5 px-5 mt-5">
+  <div class="bg-white shadow-sm rounded pt-5 pb-5 px-5 mt-4">
     <div class="panel panel-default">
       <div class="panel-body">
         <?php include '../templates/alert.php' ?>
         <div>
           <table id="dt" class="table table-hover">
-            <thead>
-              <tr class="text-center white-text bg-primary">
+            <thead class="header">
+              <tr class="text-center text-white">
                 <th>#</th>
                 <th>Token Listrik</th>
                 <th>Harga Token</th>
@@ -70,17 +70,26 @@
                             $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_biaya WHERE id_biaya='$idbiaya'");
                             while ($baris = mysqli_fetch_assoc($query_view)) {
                               ?>
-                            <div class="form-group">
-                              <label for="idbiaya">ID Biaya</label>
-                              <input type="text" name="idbiaya" class="form-control" value="<?php echo $baris['id_biaya']; ?>" readonly>
+                            <div>
+                              <input type="hidden" name="idbiaya" class="form-control" value="<?php echo $baris['id_biaya']; ?>" readonly>
                             </div>
                             <div class="form-group">
                               <label for="tokenlistrik">Token Listrik</label>
-                              <input type="text" name="tokenlistrik" class="form-control" value="<?php echo $baris['token_listrik']; ?>" readonly>
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">TKN</span>
+                                </div>
+                                <input type="text" name="tokenlistrik" class="form-control" value="<?php echo $baris['token_listrik']; ?>" readonly>
+                              </div>
                             </div>
                             <div class="form-group">
                               <label for="jumlahbiaya">Jumlah Biaya</label>
-                              <input type="text" name="jumlahbiaya" class="form-control uang" value="<?php echo $baris['jumlah_biaya']; ?>">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">Rp.</span>
+                                </div>
+                                <input type="text" name="jumlahbiaya" class="form-control uang" value="<?php echo $baris['jumlah_biaya']; ?>">
+                              </div>
                             </div>
                       </div>
 
@@ -141,7 +150,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold text-primary">INPUT</h4>
+        <h4 class="modal-title w-100 font-weight-bold text-success">INPUT</h4>
       </div>
 
       <div class="modal-body">
@@ -166,8 +175,8 @@
           </div>
 
           <div class="modal-footer justify-content-center">
-            <button type="submit" name="submit" id="tokenlistrik" class="btn btn-primary">ADD</button>
-            <button type="text" class="btn btn-outline-primary waves-effect" data-dismiss="modal">NO</button>
+            <button type="submit" name="submit" id="tokenlistrik" class="btn btn-success">ADD</button>
+            <button type="text" class="btn btn-outline-success waves-effect" data-dismiss="modal">NO</button>
           </div>
 
         </form>

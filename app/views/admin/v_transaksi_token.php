@@ -1,11 +1,11 @@
 <?php include '../templates/linkheader.php' ?>
 <?php include '../templates/navadmin.php' ?>
 
-<title>Transaksi Token Listrik</title>
+<title>Token Listrik</title>
 
 <div class="container mt-5 mb-5">
-  <h2 class="h1 text-black-50 d-inline">TOKEN LISTRIK</h2>
-  <button type="button" name="tambah" class="btn btn-primary rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
+  <h2 class="h1 text-black d-inline">TOKEN LISTRIK</h2>
+  <button type="button" name="tambah" class="btn btn-success rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
@@ -13,7 +13,7 @@
     <span class="text-black-50" style="font-size:17px">
       <i class="fa fa-home fa-fw font-weight-bold"></i>
       <span class="mx-3 font-weight-bold">|</span>
-      <span class="font-weight-bold">Home</span>
+      <span class="font-weight-bold">Dashboard</span>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <span class="font-weight-bold">Transaksi</span>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
@@ -23,7 +23,7 @@
 
   <div class="bg-white shadow-sm rounded pt-3 pb-4 px-5 mt-4">
     <div>
-      <label class="mdb-main-label text-dark">Pilih Peroide</label>
+      <label class="mdb-main-label">Pilih Peroide</label>
       <select class="form-control browser-default bulan">
         <option value="0">Semua</option>
         <option value="01">Januari</option>
@@ -56,7 +56,7 @@
   <div class="modal-dialog modal-full-height modal-left" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold text-primary">INPUT</h4>
+        <h4 class="modal-title w-100 font-weight-bold text-success">INPUT</h4>
       </div>
 
       <div class="modal-body">
@@ -101,8 +101,8 @@
       </div>
 
       <div class="modal-footer justify-content-center">
-        <button type="submit" name="submit" id="tokenlistrik" class="btn btn-primary">ADD</button>
-        <button type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">NO</button>
+        <button type="submit" name="submit" id="tokenlistrik" class="btn btn-success">ADD</button>
+        <button type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">NO</button>
       </div>
 
       </form>

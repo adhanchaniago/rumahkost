@@ -1,6 +1,6 @@
 <table id="dt" class="table table-hover">
-  <thead>
-    <tr class="text-center white-text bg-primary">
+  <thead class="header">
+    <tr class="text-center text-white">
       <th>#</th>
       <th>Tanggal Transaksi</th>
       <th>Penyewa</th>
@@ -17,8 +17,10 @@
       $tanggal = $_GET['data'];
       if ($tanggal == "0") {
         $query = mysqli_query($konekdb, "SELECT * FROM view_transaksi_listrik");
+        $no = 1;
       } else {
         $query = mysqli_query($konekdb, "SELECT * FROM view_transaksi_listrik WHERE month(tgl_transaksi) = '$tanggal'");
+        $no = 1;
       }
     } else {
       $query = mysqli_query($konekdb, "SELECT * FROM view_transaksi_listrik");
