@@ -77,23 +77,3 @@
   </div>
 </div>
 <!-- Akhir Nav -->
-
-<!-- Breadcrumb -->
-<!-- <div class="indigo shadow-sm" id="top-main">
-  <div class="container">
-    <div class="pt-5 pb-1">
-      <h2 class="h1 text-white"></h2>
-    </div>
-    <div class="pb-5" id="breadcrump">
-      <span style="font-size:17px" class="text-white">
-        <i class="fa fa-home fa-fw"></i>
-        <span class="mx-3">|</span>
-        <span>Home</span>
-        <i class="fa fa-angle-right fa-fw mx-2"></i>
-        <span>Dashboard</span>
-        <i class="fa fa-angle-right fa-fw mx-2"></i>
-      </span>
-    </div>
-  </div>
-</div> -->
-<!--/ Breadcrumb -->

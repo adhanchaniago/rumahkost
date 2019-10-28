@@ -22,13 +22,14 @@
       }
     } else {
       $query = mysqli_query($konekdb, "SELECT * FROM view_transaksi_listrik");
+      $no = 1;
     }
 
     while ($row = mysqli_fetch_array($query)) {
       ?>
 
       <tr class="text-center">
-        <td class="align-middle"><?php echo $row['id_transaksi']; ?></td>
+        <td class="align-middle"><?php echo $no++; ?></td>
         <td class="align-middle"><?php echo $row['tgl_transaksi']; ?></td>
         <td class="align-middle"><?php echo $row['nama']; ?></td>
         <td class="align-middle"><?php echo $row['token_listrik']; ?></td>

@@ -11,8 +11,19 @@
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
-  <div class="bg-white shadow-sm rounded pt-5 pb-5 px-5 mt-5">
+  <div class="mt-2">
+    <span class="text-black-50" style="font-size:17px">
+      <i class="fa fa-home fa-fw font-weight-bold"></i>
+      <span class="mx-3 font-weight-bold">|</span>
+      <span class="font-weight-bold">Home</span>
+      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
+      <span class="font-weight-bold">Manajemen</span>
+      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
+      <span>Fasilitas</span>
+    </span>
+  </div>
 
+  <div class="bg-white shadow-sm rounded pt-5 pb-5 px-5 mt-5">
     <div class="panel panel-default">
       <div class="panel-body">
         <?php include '../templates/alert.php' ?>
@@ -30,10 +41,11 @@
               include('../../config/koneksi.php');
 
               $query = mysqli_query($konekdb, "SELECT * FROM tbl_fasilitas");
+              $no = 1;
               while ($row = mysqli_fetch_array($query)) {
                 ?>
                 <tr class="text-center">
-                  <td class="align-middle"><?php echo $row['id_fasilitas']; ?></td>
+                  <td class="align-middle"><?php echo $no++; ?></td>
                   <td class="align-middle"><?php echo $row['nm_fasilitas']; ?></td>
                   <td>
                     <button type="button" name="edit" class="btn btn-sm btn-warning shadow-none rounded text-white" data-toggle="modal" data-target="#ModalEditData<?php echo $row['id_fasilitas']; ?>"><i class="fas fa-fw fa-edit"></i></button>

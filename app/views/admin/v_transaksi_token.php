@@ -1,16 +1,27 @@
 <?php include '../templates/linkheader.php' ?>
 <?php include '../templates/navadmin.php' ?>
 
-<title>Transaksi Listrik</title>
+<title>Transaksi Token Listrik</title>
 
 <div class="container mt-5 mb-5">
-  <h2 class="h1 text-black-50 d-inline">LISTRIK</h2>
+  <h2 class="h1 text-black-50 d-inline">TOKEN LISTRIK</h2>
   <button type="button" name="tambah" class="btn btn-primary rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
+  <div class="mt-2">
+    <span class="text-black-50" style="font-size:17px">
+      <i class="fa fa-home fa-fw font-weight-bold"></i>
+      <span class="mx-3 font-weight-bold">|</span>
+      <span class="font-weight-bold">Home</span>
+      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
+      <span class="font-weight-bold">Transaksi</span>
+      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
+      <span>Token Listrik</span>
+    </span>
+  </div>
 
-  <div class="bg-white shadow-sm rounded pt-3 pb-4 px-5 mt-5">
+  <div class="bg-white shadow-sm rounded pt-3 pb-4 px-5 mt-4">
     <div>
       <label class="mdb-main-label text-dark">Pilih Peroide</label>
       <select class="form-control browser-default bulan">

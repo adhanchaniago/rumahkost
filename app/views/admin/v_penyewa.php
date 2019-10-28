@@ -11,8 +11,19 @@
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
-  <div class="bg-white shadow-sm rounded pt-5 pb-5 px-5 mt-5">
+  <div class="mt-2">
+    <span class="text-black-50" style="font-size:17px">
+      <i class="fa fa-home fa-fw font-weight-bold"></i>
+      <span class="mx-3 font-weight-bold">|</span>
+      <span class="font-weight-bold">Home</span>
+      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
+      <span class="font-weight-bold">Data Akun</span>
+      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
+      <span>Penyewa</span>
+    </span>
+  </div>
 
+  <div class="bg-white shadow-sm rounded pt-5 pb-5 px-5 mt-5">
     <div class="panel panel-default">
       <div class="panel-body">
         <?php include '../templates/alert.php' ?>
@@ -37,10 +48,11 @@
               include('../../config/koneksi.php');
 
               $query = mysqli_query($konekdb, "SELECT * FROM view_penyewa");
+              $no = 1;
               while ($row = mysqli_fetch_array($query)) {
                 ?>
                 <tr class="text-center">
-                  <td class="align-middle"><?php echo $row['id_penyewa'] ?></td>
+                  <td class="align-middle"><?php echo $no++ ?></td>
                   <td class="align-middle"><?php echo $row['no_ktp'] ?></td>
                   <td class="align-middle"><?php echo $row['nama'] ?></td>
                   <td class="align-middle"><?php echo $row['jk'] ?></td>
