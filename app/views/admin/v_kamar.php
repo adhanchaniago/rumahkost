@@ -48,8 +48,15 @@
                 ?>
                 <tr class="text-center">
                   <td class="align-middle"><?php echo $no++; ?></td>
-                  <td class="align-middle"><?php echo $row['kode_kamar']; ?></td>
-                  <td class="align-middle"><?php echo $row['nm_fasilitas']; ?></td>
+                  <td class="align-middle"><?php echo $row['kode_kamar']; ?>
+                    <span class="ml-1 shadow-none badge 
+                    <?php if ($row['status_kamar'] == 'Kosong') echo 'badge-success';
+                      else if ($row['status_kamar'] == 'Terpakai') echo 'badge-danger';
+                      ?>">
+                      <?= ucfirst($row['status_kamar']); ?>
+                    </span>
+                  </td>
+                  <td class=" align-middle"><?php echo $row['nm_fasilitas']; ?></td>
                   <td class="align-middle">Rp. <span class="uang"><?php echo  $row['tarif']; ?></span>,-</td>
                   <td>
                     <button type="button" name="edit" class="btn btn-sm btn-warning shadow-none rounded text-white" data-toggle="modal" data-target="#ModalEditData<?php echo $row['id_kamar']; ?>"><i class="fas fa-fw fa-edit"></i></button>
@@ -65,7 +72,7 @@
                         <h4 class="modal-title w-100 font-weight-bold text-warning">EDIT</h4>
                       </div>
 
-                      <div class="modal-body">
+                      <div class="modal-body grey lighten-5">
                         <form action="../../models/updates/u_kamar.php" method="post" role="form">
                           <?php
                             $idkamar = $row['id_kamar'];
@@ -75,22 +82,19 @@
                             <div>
                               <input type="hidden" name="idkamar" class="form-control" value="<?php echo $baris['id_kamar']; ?>" readonly>
                             </div>
-                            <div class="form-group">
+                            <div class="md-form">
                               <label for="kodekamar">Kode Kamar</label>
                               <input type="text" name="kodekamar" class="form-control" value="<?php echo $baris['kode_kamar']; ?>" readonly>
                             </div>
-                            <div class="form-group">
-                              <label for="idfasilitas">Fasilitas</label>
-                              <select class="browser-default custom-select" name="idfasilitas" id="idfasilitas">
-                                <?php
-                                    $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_fasilitas");
-                                    while ($fasilitas = mysqli_fetch_assoc($query_view)) {
-                                      ?>
-                                  <option value="<?= $fasilitas['id_fasilitas'] ?>" <?php if ($fasilitas['id_fasilitas'] == $row['id_fasilitas']) echo "selected"; ?>> <?= $fasilitas['id_fasilitas'] . ') ' . $fasilitas['nm_fasilitas'] ?>
-                                  </option>
-                                <?php } ?>
-                              </select>
-                            </div>
+                            <select class="mdb-select md-form colorful-select dropdown-warning" name="idfasilitas" id="idfasilitas">
+                              <?php
+                                  $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_fasilitas");
+                                  while ($fasilitas = mysqli_fetch_assoc($query_view)) {
+                                    ?>
+                                <option value="<?= $fasilitas['id_fasilitas'] ?>" <?php if ($fasilitas['id_fasilitas'] == $row['id_fasilitas']) echo "selected"; ?>> <?= $fasilitas['id_fasilitas'] . ') ' . $fasilitas['nm_fasilitas'] ?>
+                                </option>
+                              <?php } ?>
+                            </select>
                             <div class="form-group">
                               <label for="tarif">Tarif</label>
                               <div class="input-group">
@@ -123,7 +127,7 @@
                         <h4 class="modal-title w-100 font-weight-bold text-danger">DELETE</h4>
                       </div>
 
-                      <div class="modal-body">
+                      <div class="modal-body grey lighten-5">
                         <form action="../../models/deletes/d_kamar.php" method="post" role="form">
                           <input type="hidden" name="idkamar" class="form-control" value="<?php echo $row['id_kamar']; ?>">
                           <center>
@@ -160,9 +164,9 @@
       <div class="modal-header text-center">
         <h4 class="modal-title w-100 font-weight-bold text-success">INPUT</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body grey lighten-5">
         <form action="../../models/saves/s_kamar.php" method="post" role="form" name="forminput" id="forminput">
-          <div class="form-group">
+          <div class="md-form">
             <?php
             include '../../models/functions/auto_number.php';
             $query = mysqli_query($konekdb, "SELECT * FROM tbl_kamar ORDER BY kode_kamar DESC LIMIT 1");
@@ -172,18 +176,15 @@
             <label for="kodekamar">Kode Kamar</label>
             <input type="text" name="kodekamar" id="kodekamar" class="form-control" value="<?= $kodeKamar ?>" readonly>
           </div>
-          <div class="form-group">
-            <label for="idfasilitas">Fasilitas</label>
-            <select id="idfasilitas" name="idfasilitas" class="browser-default custom-select">
-              <option data-live-search="true" value="" disabled selected> - Pilih Fasilitas - </option>
-              <?php
-              $query = "SELECT * FROM tbl_fasilitas";
-              $hasil = mysqli_query($konekdb, $query);
-              while ($qtabel = mysqli_fetch_assoc($hasil)) { ?>
-                <option value="<?= $qtabel['id_fasilitas'] ?>"><?= $qtabel['id_fasilitas'] . ') ' . $qtabel['nm_fasilitas'] ?></option>
-              <?php } ?>
-            </select>
-          </div>
+          <select id="idfasilitas" name="idfasilitas" class="mdb-select md-form colorful-select dropdown-success">
+            <option data-live-search="true" value="" disabled selected>Pilih Fasilitas</option>
+            <?php
+            $query = "SELECT * FROM tbl_fasilitas";
+            $hasil = mysqli_query($konekdb, $query);
+            while ($qtabel = mysqli_fetch_assoc($hasil)) { ?>
+              <option value="<?= $qtabel['id_fasilitas'] ?>"><?= $qtabel['id_fasilitas'] . ') ' . $qtabel['nm_fasilitas'] ?></option>
+            <?php } ?>
+          </select>
           <div class="form-group">
             <label for="tarif">Tarif</label>
             <div class="input-group">

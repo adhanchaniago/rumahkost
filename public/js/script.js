@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+	// Material Select
+	$(document).ready(function () {
+		$('.mdb-select').materialSelect();
+	});
+
 	// DataTables
 	$("#dt").DataTable();
 

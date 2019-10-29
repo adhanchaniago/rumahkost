@@ -21,10 +21,10 @@
     </span>
   </div>
 
-  <div class="bg-white shadow-sm rounded pt-3 pb-4 px-5 mt-4">
+  <div class="bg-white shadow-sm rounded pt-1 pb-3 px-5 mt-4">
     <div>
-      <label class="mdb-main-label">Pilih Peroide</label>
-      <select class="form-control browser-default bulan">
+      <select class="mdb-select md-form colorful-select dropdown-secondary bulan">
+        <option value="" disabled selected>Pilih Periode</option>
         <option value="0">Semua</option>
         <option value="01">Januari</option>
         <option value="02">Februari</option>
@@ -59,36 +59,30 @@
         <h4 class="modal-title w-100 font-weight-bold text-success">INPUT</h4>
       </div>
 
-      <div class="modal-body">
+      <div class="modal-body grey lighten-5">
         <form action="../../models/saves/s_transaksi_token.php" method="post" role="form" name="forminput" id="forminput">
-          <div class="form-group">
+          <div class="md-form">
             <label for="tgltransaksi">Tanggal Transaksi</label>
             <input type='text' name="tgltransaksi" class="form-control" id='tgltransaksi' required readonly value="<?= date('Y-m-d') ?>">
           </div>
-          <div class="form-group">
-            <label for="idpenyewa">Penyewa</label>
-            <select id="idpenyewa" name="idpenyewa" class="browser-default custom-select" required>
-              <option data-live-search="true" value="" disabled selected> - Pilih Nama Penyewa - </option>
-              <?php
-              $query = "SELECT * FROM tbl_penyewa";
-              $hasil = mysqli_query($konekdb, $query);
-              while ($qtabel = mysqli_fetch_assoc($hasil)) { ?>
-                <option value="<?= $qtabel['id_penyewa'] ?>"><?= $qtabel['id_penyewa'] . ' - ' . $qtabel['nama'] ?></option>
-              <?php } ?>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="idbiaya">Token Listrik</label>
-            <select id="idbiaya" name="idbiaya" class="browser-default custom-select" required>
-              <option data-live-search="true" value="" disabled selected> - Pilih Token Listrik - </option>
-              <?php
-              $query = "SELECT * FROM tbl_biaya";
-              $hasil = mysqli_query($konekdb, $query);
-              while ($qtabel = mysqli_fetch_assoc($hasil)) { ?>
-                <option value="<?= $qtabel['id_biaya'] ?>"> <?= $qtabel['token_listrik'] ?></option>
-              <?php } ?>
-            </select>
-          </div>
+          <select id="idpenyewa" name="idpenyewa" class="mdb-select md-form colorful-select dropdown-success" required>
+            <option data-live-search="true" value="" disabled selected>Pilih Nama Penyewa</option>
+            <?php
+            $query = "SELECT * FROM tbl_penyewa";
+            $hasil = mysqli_query($konekdb, $query);
+            while ($qtabel = mysqli_fetch_assoc($hasil)) { ?>
+              <option value="<?= $qtabel['id_penyewa'] ?>"><?= $qtabel['id_penyewa'] . ' - ' . $qtabel['nama'] ?></option>
+            <?php } ?>
+          </select>
+          <select id="idbiaya" name="idbiaya" class="mdb-select md-form colorful-select dropdown-success" required>
+            <option data-live-search="true" value="" disabled selected>Pilih Token Listrik</option>
+            <?php
+            $query = "SELECT * FROM tbl_biaya";
+            $hasil = mysqli_query($konekdb, $query);
+            while ($qtabel = mysqli_fetch_assoc($hasil)) { ?>
+              <option value="<?= $qtabel['id_biaya'] ?>"> <?= $qtabel['token_listrik'] ?></option>
+            <?php } ?>
+          </select>
           <div class="form-group" id="token">
             <label for="jumlahbiaya">Total Bayar Token</label>
             <div class="input-group">

@@ -61,7 +61,7 @@
                         <h4 class="modal-title w-100 font-weight-bold text-warning">EDIT</h4>
                       </div>
 
-                      <div class="modal-body">
+                      <div class="modal-body grey lighten-5">
                         <form action="../../models/updates/u_fasilitas.php" method="post" role="form">
                           <?php
                             $idfasilitas = $row['id_fasilitas'];
@@ -71,7 +71,7 @@
                             <div>
                               <input type="hidden" name="idfasilitas" class="form-control" value="<?php echo $baris['id_fasilitas']; ?>" readonly>
                             </div>
-                            <div class="form-group">
+                            <div class="md-form">
                               <label for="nmfasilitas">Nama Fasilitas</label>
                               <input type="text" name="nmfasilitas" class="form-control" value="<?php echo $baris['nm_fasilitas']; ?>">
                             </div>
@@ -98,7 +98,7 @@
                         <h4 class="modal-title w-100 font-weight-bold text-danger">DELETE</h4>
                       </div>
 
-                      <div class="modal-body">
+                      <div class="modal-body grey lighten-5">
                         <form action="../../models/deletes/d_fasilitas.php" method="post" role="form">
                           <input type="hidden" name="idfasilitas" class="form-control" value="<?php echo $row['id_fasilitas']; ?>">
                           <center>
@@ -135,9 +135,9 @@
       <div class="modal-header text-center">
         <h4 class="modal-title w-100 font-weight-bold text-success">INPUT</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body grey lighten-5">
         <form action="../../models/saves/s_fasilitas.php" method="post" role="form" name="forminput" id="forminput">
-          <div class="form-group">
+          <div class="md-form">
             <label for="nmfasilitas">Nama Fasilitas</label>
             <input type="text" name="nmfasilitas" id="nmfasilitas" class="form-control" required autofocus>
           </div>

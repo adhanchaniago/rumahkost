@@ -63,7 +63,7 @@
                         <h4 class="modal-title w-100 font-weight-bold text-warning ">EDIT</h4>
                       </div>
 
-                      <div class="modal-body">
+                      <div class="modal-body grey lighten-5">
                         <form action="../../models/updates/u_biaya.php" method="post" role="form">
                           <?php
                             $idbiaya = $row['id_biaya'];
@@ -115,7 +115,7 @@
                         <h4 class="modal-title w-100 font-weight-bold text-danger">DELETE</h4>
                       </div>
 
-                      <div class="modal-body">
+                      <div class="modal-body grey lighten-5">
                         <form action="../../models/deletes/d_biaya.php" method="post" role="form">
                           <input type="hidden" name="idbiaya" class="form-control" value="<?php echo $row['id_biaya']; ?>">
                           <center>
@@ -153,7 +153,7 @@
         <h4 class="modal-title w-100 font-weight-bold text-success">INPUT</h4>
       </div>
 
-      <div class="modal-body">
+      <div class="modal-body grey lighten-5">
         <form action="../../models/saves/s_biaya.php" method="post" role="form" name="forminput" id="forminput">
           <div class="form-group">
             <label for="tokenlistrik">Token Listrik</label>
