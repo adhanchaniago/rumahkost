@@ -23,7 +23,7 @@
     </span>
   </div>
 
-  <div class="bg-white shadow-sm rounded pt-5 pb-5 px-5 mt-4">
+  <div class="bg-white shadow-sm rounded py-4 px-5 mt-5">
     <div class="panel panel-default">
       <div class="panel-body">
         <?php include '../templates/alert.php' ?>
@@ -168,7 +168,7 @@
         <form action="../../models/saves/s_kamar.php" method="post" role="form" name="forminput" id="forminput">
           <div class="md-form">
             <?php
-            include '../../models/functions/auto_number.php';
+            include '../../functions/auto_number.php';
             $query = mysqli_query($konekdb, "SELECT * FROM tbl_kamar ORDER BY kode_kamar DESC LIMIT 1");
             $latestKD = mysqli_fetch_assoc($query);
             $kodeKamar = autonumber($latestKD['kode_kamar'], 1, 3);

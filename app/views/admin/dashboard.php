@@ -29,7 +29,7 @@
     <div class="col-md">
       <div class="bg-white p-4 rounded shadow-sm">
         <h1 class="h1 text-center"></h1>
-        <h1 class="h6 text-center">Fasilitas</h1>
+        <h1 class="h6 text-center">Token Listrik</h1>
       </div>
     </div>
     <div class="col-md">
@@ -41,13 +41,13 @@
     <div class="col-md">
       <div class="bg-white p-4 rounded shadow-sm">
         <h1 class="h1 text-center"></h1>
-        <h1 class="h6 text-center">Token Listrik</h1>
+        <h1 class="h6 text-center">Transaksi</h1>
       </div>
     </div>
     <div class="col-md">
       <div class="bg-white p-4 rounded shadow-sm">
         <h1 class="h1 text-center"></h1>
-        <h1 class="h6 text-center">Transaksi</h1>
+        <h1 class="h6 text-center">Arsip</h1>
       </div>
     </div>
   </div>

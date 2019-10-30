@@ -23,7 +23,7 @@
     </span>
   </div>
 
-  <div class="bg-white shadow-sm rounded pt-5 pb-5 px-5 mt-4">
+  <div class="bg-white shadow-sm rounded py-4 px-5 mt-5">
     <div class="panel panel-default">
       <div class="panel-body">
         <?php include '../templates/alert.php' ?>

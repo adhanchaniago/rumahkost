@@ -36,40 +36,55 @@
 
 <!-- Nav -->
 <div class="menu shadow-sm sticky-top" style="z-index:1">
-  <div class="container py-1">
-    <ul class="nav md-tabs bg-transparent shadow-none mx-0 mb-0 pl-0">
+  <div class="pt-1">
+    <ul class="nav md-tabs bg-transparent shadow-none justify-content-center mb-0 pr-5">
+
+      <li class="nav-item dropdown mr-2">
+        <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manajemen</a>
+        <div class="dropdown-menu dropdown-secondary mt-1">
+          <a href="v_kamar.php" class="dropdown-item waves-light">Kamar</a>
+          <a href="v_fasilitas.php" class="dropdown-item waves-light">Fasilitas</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown mr-2">
+        <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Listrik</a>
+        <div class="dropdown-menu dropdown-secondary mt-1">
+          <a href="v_biaya.php" class="dropdown-item waves-light">Token Listrik</a>
+        </div>
+      </li>
 
       <li class="nav-item mr-2">
-        <a href="dashboard.php" class="nav-link text-white deep-purple lighten-1 rounded font-weight-bold">Dashboard</a>
+        <a href="v_penyewa.php" class="nav-link text-white waves-light">Data Penyewa</a>
+      </li>
+
+      <li class="nav-item mr-2">
+        <a href="dashboard.php" class="nav-link text-white deep-purple lighten-1 rounded font-weight-bold waves-light">Dashboard</a>
       </li>
 
       <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manajemen</a>
+        <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transaksi</a>
         <div class="dropdown-menu dropdown-secondary mt-1">
-          <a href="v_kamar.php" class="dropdown-item">Kamar</a>
-          <a href="v_fasilitas.php" class="dropdown-item">Fasilitas</a>
-          <div class="dropdown-divider"></div>
-          <a href="v_biaya.php" class="dropdown-item">Token Listrik</a>
+          <a href="#!" class="dropdown-item waves-light">Kamar</a>
+          <a href="v_transaksi_token.php" class="dropdown-item waves-light">Token Listrik</a>
         </div>
       </li>
 
       <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
+        <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Arsip</a>
         <div class="dropdown-menu dropdown-secondary mt-1">
-          <a href="v_penyewa.php" class="dropdown-item">Penyewa</a>
+          <a href="#!" class="dropdown-item waves-light">Kamar</a>
+          <a href="#!" class="dropdown-item waves-light">Token Listrik</a>
         </div>
       </li>
 
       <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transaksi</a>
+        <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Laporan</a>
         <div class="dropdown-menu dropdown-secondary mt-1">
-          <a href="#!" class="dropdown-item">Kamar</a>
-          <a href="v_transaksi_token.php" class="dropdown-item">Token Listrik</a>
+          <a href="#!" class="dropdown-item waves-light">Kamar</a>
+          <a href="#!" class="dropdown-item waves-light">Penyewa</a>
+          <a href="#!" class="dropdown-item waves-light">Token Listrik</a>
         </div>
-      </li>
-
-      <li class="nav-item py-1 ml-auto">
-        <input class="form-control form-control-sm p-3" type="text" placeholder="Search" style="width:170px">
       </li>
 
     </ul>

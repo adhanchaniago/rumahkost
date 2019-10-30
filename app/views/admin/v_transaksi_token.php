@@ -21,7 +21,7 @@
     </span>
   </div>
 
-  <div class="bg-white shadow-sm rounded pt-1 pb-3 px-5 mt-4">
+  <div class="bg-white shadow-sm rounded pt-1 pb-3 px-5 mt-5">
     <div>
       <select class="mdb-select md-form colorful-select dropdown-secondary bulan">
         <option value="" disabled selected>Pilih Periode</option>
@@ -41,7 +41,7 @@
       </select>
     </div>
   </div>
-  <div class="bg-white shadow-sm rounded pt-4 pb-4 px-5 mt-4">
+  <div class="bg-white shadow-sm rounded py-4 px-5 mt-4">
     <div class="panel panel-default">
       <div class="panel-body">
         <?php include '../templates/alert.php' ?>
