@@ -37,7 +37,7 @@
 <!-- Nav -->
 <div class="menu shadow-sm sticky-top" style="z-index:1">
   <div class="pt-1">
-    <ul class="nav md-tabs bg-transparent shadow-none justify-content-center mb-0 pr-5">
+    <ul class="nav md-tabs bg-transparent shadow-none justify-content-center mb-0">
 
       <li class="nav-item dropdown mr-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manajemen</a>
@@ -54,8 +54,11 @@
         </div>
       </li>
 
-      <li class="nav-item mr-2">
-        <a href="v_penyewa.php" class="nav-link text-white waves-light">Data Penyewa</a>
+      <li class="nav-item dropdown mr-2">
+        <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
+        <div class="dropdown-menu dropdown-secondary mt-1">
+          <a href="v_penyewa.php" class="dropdown-item waves-light">Penyewa</a>
+        </div>
       </li>
 
       <li class="nav-item mr-2">
