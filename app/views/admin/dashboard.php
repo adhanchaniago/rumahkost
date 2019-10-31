@@ -7,13 +7,13 @@
   <h2 class="h1 text-black d-inline">
     DASHBOARD
   </h2>
-  <div class="mt-2">
+  <div class="mt-3">
     <span class="text-black-50" style="font-size:17px">
       <i class="fa fa-home fa-fw font-weight-bold"></i>
       <span class="font-weight-bold mx-3">|</span>
-      <span class="font-weight-bold">Home</span>
+      <a href="#!" class="font-weight-bold text-black-50">Home</a>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
-      <a href="#" class="text-black-50">Dashboard</a>
+      <a href="dashboard.php" class="text-black-50">Dashboard</a>
     </span>
   </div>
 </div>

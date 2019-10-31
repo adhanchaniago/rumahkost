@@ -47,18 +47,12 @@
         </div>
       </li>
 
-      <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Listrik</a>
-        <div class="dropdown-menu dropdown-secondary mt-1">
-          <a href="v_biaya.php" class="dropdown-item waves-light">Token Listrik</a>
-        </div>
+      <li class="nav-item mr-2">
+        <a href="v_token.php" class="nav-link text-white waves-light">Listrik</a>
       </li>
 
-      <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
-        <div class="dropdown-menu dropdown-secondary mt-1">
-          <a href="v_penyewa.php" class="dropdown-item waves-light">Penyewa</a>
-        </div>
+      <li class="nav-item mr-2">
+        <a href="v_penyewa.php" class="nav-link text-white waves-light">Penyewa</a>
       </li>
 
       <li class="nav-item mr-2">

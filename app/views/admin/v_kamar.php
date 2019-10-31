@@ -11,15 +11,17 @@
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
-  <div class="mt-2">
+  <div class="mt-3">
     <span class="text-black-50" style="font-size:17px">
       <i class="fa fa-home fa-fw font-weight-bold"></i>
       <span class="mx-3 font-weight-bold">|</span>
-      <span class="font-weight-bold">Dashboard</span>
+      <a href="#!" class="text-black-50">Home</a>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
-      <span class="font-weight-bold">Manajemen</span>
+      <a href="dashboard.php" class="text-black-50">Dashboard</a>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
-      <span>Kamar</span>
+      <span>Manajemen</span>
+      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
+      <a href="v_kamar.php" class="font-weight-bold text-black-50">Kamar</a>
     </span>
   </div>
 
