@@ -9,8 +9,6 @@
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
-
-  <!-- Breadcrumb -->
   <div class="mt-3">
     <span class="text-black-50" style="font-size:17px">
       <i class="fa fa-home fa-fw font-weight-bold"></i>
@@ -24,40 +22,40 @@
       <a href="v_transaksi_token.php" class="font-weight-bold text-black-50">Token Listrik</a>
     </span>
   </div>
-  <!-- /Breadcrumb -->
-
 
   <div class="bg-white shadow-sm rounded pt-1 pb-3 px-5 mt-5">
-    <select class="mdb-select md-form colorful-select dropdown-secondary bulan">
-      <option value="" disabled selected>Pilih Periode</option>
-      <option value="0">Semua</option>
-      <option value="01">Januari</option>
-      <option value="02">Februari</option>
-      <option value="03">Maret</option>
-      <option value="04">April</option>
-      <option value="05">Mei</option>
-      <option value="06">Juni</option>
-      <option value="07">Juli</option>
-      <option value="08">Agustus</option>
-      <option value="09">September</option>
-      <option value="10">Oktober</option>
-      <option value="11">November</option>
-      <option value="12">Desember</option>
-    </select>
+    <div>
+      <select class="mdb-select md-form colorful-select dropdown-secondary bulan">
+        <option value="" disabled selected>Pilih Periode</option>
+        <option value="0">Semua</option>
+        <option value="01">Januari</option>
+        <option value="02">Februari</option>
+        <option value="03">Maret</option>
+        <option value="04">April</option>
+        <option value="05">Mei</option>
+        <option value="06">Juni</option>
+        <option value="07">Juli</option>
+        <option value="08">Agustus</option>
+        <option value="09">September</option>
+        <option value="10">Oktober</option>
+        <option value="11">November</option>
+        <option value="12">Desember</option>
+      </select>
+    </div>
   </div>
   <div class="bg-white shadow-sm rounded py-4 px-5 mt-4">
     <div class="panel panel-default">
       <div class="panel-body">
         <?php include '../templates/alert.php' ?>
-        <div class="datatoken"></div>
+        <div class="data"></div>
       </div>
     </div>
   </div>
 </div>
 
 <!-- Modal Untuk menginput Data -->
-<div class="modal fade" id="ModalTambahData" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade left" id="ModalTambahData" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-full-height modal-left" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
         <h4 class="modal-title w-100 font-weight-bold text-success">INPUT</h4>

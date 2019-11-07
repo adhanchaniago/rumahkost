@@ -3,53 +3,131 @@
 
 <title>Dashboard</title>
 
-<div class="container mt-5 mb-5">
-  <h2 class="h1 text-black d-inline">
-    DASHBOARD
-  </h2>
-  <div class="mt-3">
-    <span class="text-black-50" style="font-size:17px">
-      <i class="fa fa-home fa-fw font-weight-bold"></i>
-      <span class="font-weight-bold mx-3">|</span>
-      <a href="#!" class="font-weight-bold text-black-50">Home</a>
-      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
-      <a href="dashboard.php" class="text-black-50">Dashboard</a>
-    </span>
-  </div>
-</div>
+<div class="container mt-4 mb-4">
+  <div class="row mb-4">
 
-<div class="container">
-  <div class="row mb-4" id="count-dashboard">
     <div class="col-md">
       <div class="bg-white p-4 rounded shadow-sm">
-        <h1 class="h1 text-center"></h1>
+        <h1 class="h1 text-center">
+          <?php
+          include('../../config/koneksi.php');
+          $query = mysqli_query($konekdb, "SELECT * FROM tbl_kamar");
+          ($jumlah = mysqli_num_rows($query))
+          ?>
+          <?php echo $jumlah; ?>
+        </h1>
         <h1 class="h6 text-center">Kamar</h1>
       </div>
     </div>
+
     <div class="col-md">
       <div class="bg-white p-4 rounded shadow-sm">
-        <h1 class="h1 text-center"></h1>
+        <h1 class="h1 text-center">
+          <?php
+          include('../../config/koneksi.php');
+          $query = mysqli_query($konekdb, "SELECT * FROM tbl_fasilitas");
+          ($jumlah = mysqli_num_rows($query))
+          ?>
+          <?php echo $jumlah; ?>
+        </h1>
+        <h1 class="h6 text-center">Fasilitas</h1>
+      </div>
+    </div>
+
+    <div class="col-md">
+      <div class="bg-white p-4 rounded shadow-sm">
+        <h1 class="h1 text-center">
+          <?php
+          include('../../config/koneksi.php');
+          $query = mysqli_query($konekdb, "SELECT * FROM tbl_biaya");
+          ($jumlah = mysqli_num_rows($query))
+          ?>
+          <?php echo $jumlah; ?>
+        </h1>
         <h1 class="h6 text-center">Token Listrik</h1>
       </div>
     </div>
+
     <div class="col-md">
       <div class="bg-white p-4 rounded shadow-sm">
-        <h1 class="h1 text-center"></h1>
+        <h1 class="h1 text-center">
+          <?php
+          include('../../config/koneksi.php');
+          $query = mysqli_query($konekdb, "SELECT * FROM tbl_penyewa");
+          ($jumlah = mysqli_num_rows($query))
+          ?>
+          <?php echo $jumlah; ?>
+        </h1>
         <h1 class="h6 text-center">Penyewa</h1>
       </div>
     </div>
+
     <div class="col-md">
       <div class="bg-white p-4 rounded shadow-sm">
-        <h1 class="h1 text-center"></h1>
+        <h1 class="h1 text-center">
+          <?php
+          include('../../config/koneksi.php');
+          $query = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_kamar WHERE no_transaksi != 'T000'");
+          ($jumlah = mysqli_num_rows($query))
+          ?>
+          <?php echo $jumlah; ?>
+        </h1>
         <h1 class="h6 text-center">Transaksi</h1>
       </div>
     </div>
-    <div class="col-md">
-      <div class="bg-white p-4 rounded shadow-sm">
-        <h1 class="h1 text-center"></h1>
-        <h1 class="h6 text-center">Arsip</h1>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="bg-white shadow-sm rounded pt-5 pb-4">
+        <h1 class="h4 text-center">Daftar Kamar</h1>
+
+        <div class="d-flex justify-content-center">
+          <div class="hr mb-4 mt-2"></div>
+        </div>
+
+        <table class="table table-hover table-borderless">
+          <!-- <?php foreach ($data['MobilKosong'] as $mk) : ?>
+            <tr class="text-center">
+              <td><?= $mk['NoPlat']; ?></td>
+              <td><?= $mk['NmMerk']; ?></td>
+              <td><?= $mk['NmType']; ?></td>
+              <td>
+                Rp.<span class="uang"><?= $mk['HargaSewa']; ?></span>,-
+              </td>
+              <td>
+                <a href="" class="btn btn-success btn-sm shadow-none">PESAN</a>
+              </td>
+            </tr>
+          <?php endforeach; ?> -->
+        </table>
+      </div>
+    </div>
+    <!-- USER UNACTIVE -->
+    <div class="col-md-6">
+      <div class="bg-white shadow-sm rounded pt-5 pb-4">
+        <h1 class="h4 text-center">Penyewa</h1>
+
+        <div class="d-flex justify-content-center">
+          <div class="hr mb-4 mt-2"></div>
+        </div>
+        <table class="table table-hover table-borderless">
+          <!-- <?php if ($_SESSION['Login']['RoleId'] == 1)
+                  foreach ($data['UserUn'] as $Un) : ?>
+            <tr class="text-center">
+              <td><?= $Un['NIK'] ?> </td>
+              <td><?= $Un['Nama'] ?> </td>
+              <td>
+                <a href="<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/pending" class="btn btn-success btn-sm shadow-none">Lihat</a>
+              </td>
+            </tr>
+          <?php endforeach; ?> -->
+        </table>
       </div>
     </div>
   </div>
 
-  <?php include '../templates/linkfooter.php' ?>
+</div>
+
+<?php include '../templates/linkfooter.php' ?>

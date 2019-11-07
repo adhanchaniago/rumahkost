@@ -38,7 +38,7 @@
                 <th>Pekerjaan</th>
                 <th>No.Hp</th>
                 <th>Kode Kamar</th>
-                <th>Tgl Masuk</th>
+                <th>Tgl Sewa</th>
                 <th>Tgl Expire</th>
                 <th>Action</th>
               </tr>
@@ -215,7 +215,7 @@
             <?php } ?>
           </select>
           <div class="md-form">
-            <label for="tglmasuk">Tanggal Masuk</label>
+            <label for="tglmasuk">Tanggal Sewa</label>
             <input type='text' name="tglmasuk" class="form-control datepicker" id='tglmasuk' required>
           </div>
       </div>

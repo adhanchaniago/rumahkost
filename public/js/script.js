@@ -19,19 +19,36 @@ $(document).ready(function () {
 	// Format No.Telpon
 	$(".telp").mask("0000-0000-00000");
 
-	// Periode
-	$('.data').load('v_data.php');
+	// Khusus Periode
+	// Transaksi Token
+	$('.datatoken').load('data_transaksi_token.php');
 	$('.bulan').change(function () {
 		var data = $(this).val();
-		$('.data').load('v_data.php?data=' + data);
+		$('.datatoken').load('data_transaksi_token.php?datatoken=' + data);
+	});
+
+	// Transaksi Kamar
+	$('.datakamar').load('data_transaksi_kamar.php');
+	$('.bulan').change(function () {
+		var data = $(this).val();
+		$('.datakamar').load('data_transaksi_kamar.php?datakamar=' + data);
 	});
 
 	// KHUSUS GET //
-	// Get Listrik
+	// Transaksi Listrik
 	$("#idbiaya").change(function () {
-		var id_biaya = $("#idbiaya").val();
-		$("#token").load("../../views/get/getlistrik.php?idbiaya=" + id_biaya);
+		var idbiaya = $("#idbiaya").val();
+		$("#token").load("../../views/get/getlistrik.php?idbiaya=" + idbiaya);
 	});
-	//  Get Kamar
+	// Transaksi Kamar
+	$("#idpenyewa0").change(function () {
+		var idpenyewa = $("#idpenyewa0").val();
+		$("#kamar").load("../../views/get/getkodekamar.php?idpenyewa=" + idpenyewa);
+	});
+	// Tarif Transaksi Kamar
+	$("#idpenyewa0").change(function () {
+		var tarif = $("#idpenyewa0").val();
+		$("#tarif").load("../../views/get/gettarif.php?idpenyewa=" + tarif);
+	});
 
 });

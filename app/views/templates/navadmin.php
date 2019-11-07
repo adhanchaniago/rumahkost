@@ -1,4 +1,4 @@
-<!--Main Navigation-->
+<!-- Header -->
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark py-3 shadow-none header">
     <div class="container">
@@ -32,14 +32,14 @@
     </div>
   </nav>
 </header>
-<!--Main Navigation-->
+<!-- /Header -->
 
 <!-- Nav -->
 <div class="menu shadow-sm sticky-top" style="z-index:1">
   <div class="pt-1">
     <ul class="nav md-tabs bg-transparent shadow-none justify-content-center mb-0">
 
-      <li class="nav-item dropdown mr-2">
+      <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manajemen</a>
         <div class="dropdown-menu dropdown-secondary mt-1">
           <a href="v_kamar.php" class="dropdown-item waves-light">Kamar</a>
@@ -47,35 +47,35 @@
         </div>
       </li>
 
-      <li class="nav-item mr-2">
+      <li class="nav-item mx-2">
         <a href="v_token.php" class="nav-link text-white waves-light">Listrik</a>
       </li>
 
-      <li class="nav-item mr-2">
+      <li class="nav-item mx-2">
         <a href="v_penyewa.php" class="nav-link text-white waves-light">Penyewa</a>
       </li>
 
-      <li class="nav-item mr-2">
+      <li class="nav-item mx-2">
         <a href="dashboard.php" class="nav-link text-white deep-purple lighten-1 rounded font-weight-bold waves-light">Dashboard</a>
       </li>
 
-      <li class="nav-item dropdown mr-2">
+      <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transaksi</a>
         <div class="dropdown-menu dropdown-secondary mt-1">
-          <a href="#!" class="dropdown-item waves-light">Kamar</a>
+          <a href="v_transaksi_kamar.php" class="dropdown-item waves-light">Kamar</a>
           <a href="v_transaksi_token.php" class="dropdown-item waves-light">Token Listrik</a>
         </div>
       </li>
 
-      <li class="nav-item dropdown mr-2">
+      <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Arsip</a>
         <div class="dropdown-menu dropdown-secondary mt-1">
-          <a href="#!" class="dropdown-item waves-light">Kamar</a>
-          <a href="#!" class="dropdown-item waves-light">Token Listrik</a>
+          <a href="#!" class="dropdown-item waves-light">T. Kamar</a>
+          <a href="#!" class="dropdown-item waves-light">T. Token Listrik</a>
         </div>
       </li>
 
-      <li class="nav-item dropdown mr-2">
+      <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Laporan</a>
         <div class="dropdown-menu dropdown-secondary mt-1">
           <a href="#!" class="dropdown-item waves-light">Kamar</a>
@@ -87,4 +87,4 @@
     </ul>
   </div>
 </div>
-<!-- Akhir Nav -->
+<!-- /Nav -->

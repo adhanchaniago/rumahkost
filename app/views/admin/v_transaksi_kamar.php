@@ -1,10 +1,10 @@
 <?php include '../templates/linkheader.php' ?>
 <?php include '../templates/navadmin.php' ?>
 
-<title>Token Listrik</title>
+<title>Kamar</title>
 
 <div class="container mt-5 mb-5">
-  <h2 class="h1 text-black d-inline">TOKEN LISTRIK</h2>
+  <h2 class="h1 text-black d-inline">KAMAR</h2>
   <button type="button" name="tambah" class="btn btn-success rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
@@ -21,7 +21,7 @@
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <span>Transaksi</span>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
-      <a href="v_transaksi_token.php" class="font-weight-bold text-black-50">Token Listrik</a>
+      <a href="v_transaksi_kamar.php" class="font-weight-bold text-black-50">Kamar</a>
     </span>
   </div>
   <!-- /Breadcrumb -->
@@ -49,7 +49,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <?php include '../templates/alert.php' ?>
-        <div class="datatoken"></div>
+        <div class="datakamar"></div>
       </div>
     </div>
   </div>
@@ -58,18 +58,47 @@
 <!-- Modal Untuk menginput Data -->
 <div class="modal fade" id="ModalTambahData" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
+
     <div class="modal-content">
       <div class="modal-header text-center">
         <h4 class="modal-title w-100 font-weight-bold text-success">INPUT</h4>
       </div>
 
       <div class="modal-body grey lighten-5">
-        <form action="../../models/saves/s_transaksi_token.php" method="post" role="form" name="forminput" id="forminput">
+        <form action="../../models/saves/s_transaksi_kamar.php" method="post" role="form" name="forminput" id="forminput">
           <div class="md-form">
             <label for="tgltransaksi">Tanggal Transaksi</label>
             <input type='text' name="tgltransaksi" class="form-control" id='tgltransaksi' required readonly value="<?= date('Y-m-d') ?>">
           </div>
-          <select id="idpenyewa" name="idpenyewa" class="mdb-select md-form colorful-select dropdown-success" required>
+
+          <div class="md-form">
+            <?php
+            include '../../functions/auto_number.php';
+            $query = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_kamar ORDER BY no_transaksi DESC LIMIT 1");
+            $latestKD = mysqli_fetch_assoc($query);
+            $notransaksi = autonumber($latestKD['no_transaksi'], 1, 3);
+            ?>
+            <label for="notransaksi">No.Transaksi</label>
+            <input type="text" name="notransaksi" id="notransaksi" class="form-control" value="<?= $notransaksi ?>" readonly>
+          </div>
+
+          <select class="mdb-select md-form colorful-select dropdown-success bulan" name="periode" required>
+            <option value="" disabled selected>Pilih Periode</option>
+            <option value="Januari">Januari</option>
+            <option value="Februari">Februari</option>
+            <option value="Maret">Maret</option>
+            <option value="April">April</option>
+            <option value="Mei">Mei</option>
+            <option value="Juni">Juni</option>
+            <option value="Juli">Juli</option>
+            <option value="Agustus">Agustus</option>
+            <option value="September">September</option>
+            <option value="Oktober">Oktober</option>
+            <option value="November">November</option>
+            <option value="Desember">Desember</option>
+          </select>
+
+          <select id="idpenyewa0" name="idpenyewa" class="mdb-select md-form colorful-select dropdown-success" required>
             <option data-live-search="true" value="" disabled selected>Pilih Nama Penyewa</option>
             <?php
             $query = "SELECT * FROM tbl_penyewa";
@@ -78,22 +107,19 @@
               <option value="<?= $qtabel['id_penyewa'] ?>"><?= $qtabel['id_penyewa'] . ' - ' . $qtabel['nama'] ?></option>
             <?php } ?>
           </select>
-          <select id="idbiaya" name="idbiaya" class="mdb-select md-form colorful-select dropdown-success" required>
-            <option data-live-search="true" value="" disabled selected>Pilih Token Listrik</option>
-            <?php
-            $query = "SELECT * FROM tbl_biaya";
-            $hasil = mysqli_query($konekdb, $query);
-            while ($qtabel = mysqli_fetch_assoc($hasil)) { ?>
-              <option value="<?= $qtabel['id_biaya'] ?>"> <?= $qtabel['token_listrik'] ?></option>
-            <?php } ?>
-          </select>
-          <div class="form-group" id="token">
-            <label for="jumlahbiaya">Total Bayar Token</label>
+
+          <div class="md-form" id="kamar">
+            <input type="text" id="kodekamar" name="kodekamar" class="form-control" readonly required>
+            <label for="kodekamar">Kode Kamar</label>
+          </div>
+
+          <div class="form-group" id="tarif">
+            <label for="tarif">Total Bayar Sewa</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">Rp.</span>
               </div>
-              <input type="text" class="form-control uang" id="jumlahbiaya" name="jumlahbiaya" required readonly autocomplete="off">
+              <input type="text" class="form-control uang" id="tarif" name="tarif" required readonly autocomplete="off">
             </div>
           </div>
       </div>

@@ -1,8 +1,7 @@
 <?php
+include '../../config/koneksi.php';
 
 $idbiaya = $_GET['idbiaya'];
-
-include '..\..\config\koneksi.php';
 
 $sql = mysqli_query($konekdb, "SELECT * FROM tbl_biaya WHERE id_biaya='$idbiaya'");
 
