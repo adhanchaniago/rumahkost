@@ -1,10 +1,10 @@
-<table id="dt" class="table table-hover">
-  <thead class="header">
+<table id="dt" class="table table-hover table-responsive-md">
+  <thead class="elegant-color-dark">
     <tr class="text-center text-white">
       <th>#</th>
-      <th>Tanggal Transaksi</th>
+      <th>Tgl Transaksi</th>
       <th>Penyewa</th>
-      <th>Token Listrik</th>
+      <th>Tkn Listrik</th>
       <th>Harga</th>
       <th>Status</th>
       <th>Action</th>

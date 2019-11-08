@@ -7,7 +7,7 @@
   <h2 class="h1 text-black d-inline">
     TOKEN LISTRIK
   </h2>
-  <button type="button" name="tambah" class="btn btn-success rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
+  <button type="button" name="tambah" class="btn btn-success btn-md rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
@@ -15,8 +15,6 @@
     <span class="text-black-50" style="font-size:17px">
       <i class="fa fa-home fa-fw font-weight-bold"></i>
       <span class="mx-3 font-weight-bold">|</span>
-      <a href="#!" class="text-black-50">Home</a>
-      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <a href="dashboard.php" class="text-black-50">Dashboard</a>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <a href="v_token.php" class="font-weight-bold text-black-50">Token Listrik</a>
@@ -28,8 +26,8 @@
       <div class="panel-body">
         <?php include '../templates/alert.php' ?>
         <div>
-          <table id="dt" class="table table-hover">
-            <thead class="header">
+          <table id="dt" class="table table-hover table-responsive-md">
+            <thead class="elegant-color-dark">
               <tr class="text-center text-white">
                 <th>#</th>
                 <th>Token Listrik</th>
@@ -73,23 +71,17 @@
                             <div>
                               <input type="hidden" name="idbiaya" class="form-control" value="<?php echo $baris['id_biaya']; ?>" readonly>
                             </div>
-                            <div class="form-group">
-                              <label for="tokenlistrik">Token Listrik</label>
-                              <div class="input-group">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text">TKN</span>
-                                </div>
-                                <input type="text" name="tokenlistrik" class="form-control" value="<?php echo $baris['token_listrik']; ?>" readonly>
+                            <div class="md-form input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text md-addon">TKN</span>
                               </div>
+                              <input type="text" name="tokenlistrik" class="form-control" value="<?php echo $baris['token_listrik']; ?>" readonly>
                             </div>
-                            <div class="form-group">
-                              <label for="jumlahbiaya">Jumlah Biaya</label>
-                              <div class="input-group">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text">Rp.</span>
-                                </div>
-                                <input type="text" name="jumlahbiaya" class="form-control uang" value="<?php echo $baris['jumlah_biaya']; ?>">
+                            <div class="md-form input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text md-addon">Rp.</span>
                               </div>
+                              <input type="text" name="jumlahbiaya" class="form-control uang" value="<?php echo $baris['jumlah_biaya']; ?>">
                             </div>
                       </div>
 
@@ -155,23 +147,17 @@
 
       <div class="modal-body grey lighten-5">
         <form action="../../models/saves/s_biaya.php" method="post" role="form" name="forminput" id="forminput">
-          <div class="form-group">
-            <label for="tokenlistrik">Token Listrik</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">TKN</span>
-              </div>
-              <input type="text" name="tokenlistrik" id="tokenlistrik" class="form-control uang" required>
-            </div>&nbsp;
-            <div class="form-group">
-              <label for="jumlahbiaya">Harga Token</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Rp.</span>
-                </div>
-                <input type="text" name="jumlahbiaya" id="jumlahbiaya" class="form-control uang" required>
-              </div>
+          <div class="md-form input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text md-addon">TKN</span>
             </div>
+            <input type="text" name="tokenlistrik" id="tokenlistrik" class="form-control uang" required>
+          </div>
+          <div class="md-form input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text md-addon">Rp.</span>
+            </div>
+            <input type="text" name="jumlahbiaya" id="jumlahbiaya" class="form-control uang" required>
           </div>
 
           <div class="modal-footer justify-content-center">

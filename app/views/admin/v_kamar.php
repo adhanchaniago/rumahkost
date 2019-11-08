@@ -7,7 +7,7 @@
   <h2 class="h1 text-black d-inline">
     KAMAR
   </h2>
-  <button type="button" name="tambah" class="btn success-color text-white rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
+  <button type="button" name="tambah" class="btn success-color btn-md text-white rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
@@ -15,8 +15,6 @@
     <span class="text-black-50" style="font-size:17px">
       <i class="fa fa-home fa-fw font-weight-bold"></i>
       <span class="mx-3 font-weight-bold">|</span>
-      <a href="#!" class="text-black-50">Home</a>
-      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <a href="dashboard.php" class="text-black-50">Dashboard</a>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <span>Manajemen</span>
@@ -30,8 +28,8 @@
       <div class="panel-body">
         <?php include '../templates/alert.php' ?>
         <div>
-          <table id="dt" class="table table-hover">
-            <thead class="header">
+          <table id="dt" class="table table-hover table-responsive-md">
+            <thead class="elegant-color-dark">
               <tr class="text-center text-white">
                 <th>#</th>
                 <th>Kode Kamar</th>
@@ -97,14 +95,11 @@
                                 </option>
                               <?php } ?>
                             </select>
-                            <div class="form-group">
-                              <label for="tarif">Tarif</label>
-                              <div class="input-group">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text">Rp.</span>
-                                </div>
-                                <input type="text" name="tarif" class="form-control uang" value="<?php echo $baris['tarif']; ?>">
+                            <div class="md-form input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text md-addon">Rp.</span>
                               </div>
+                              <input type="text" name="tarif" class="form-control uang" value="<?php echo $baris['tarif']; ?>">
                             </div>
                       </div>
 
@@ -187,20 +182,17 @@
               <option value="<?= $qtabel['id_fasilitas'] ?>"><?= $qtabel['id_fasilitas'] . ') ' . $qtabel['nm_fasilitas'] ?></option>
             <?php } ?>
           </select>
-          <div class="form-group">
-            <label for="tarif">Tarif</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text"">Rp.</span>
-              </div>
-              <input type=" text" name="tarif" id="tarif" class="form-control uang" required>
-              </div>
+          <div class="md-form input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text md-addon">Rp.</span>
             </div>
+            <input type="text" name="tarif" id="tarif" class="form-control uang" required>
+          </div>
 
-            <div class="modal-footer justify-content-center">
-              <button type="submit" name="submit" id="kodekamar" class="btn btn-success">ADD</button>
-              <button type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">NO</button>
-            </div>
+          <div class=" modal-footer justify-content-center">
+            <button type="submit" name="submit" id="kodekamar" class="btn btn-success">ADD</button>
+            <button type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">NO</button>
+          </div>
 
         </form>
       </div>

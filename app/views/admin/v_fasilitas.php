@@ -7,7 +7,7 @@
   <h2 class="h1 text-black d-inline">
     FASILITAS
   </h2>
-  <button type="button" name="tambah" class="btn btn-success rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
+  <button type="button" name="tambah" class="btn btn-success btn-md rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
@@ -15,8 +15,6 @@
     <span class="text-black-50" style="font-size:17px">
       <i class="fa fa-home fa-fw font-weight-bold"></i>
       <span class="mx-3 font-weight-bold">|</span>
-      <a href="#!.php" class="text-black-50">Home</a>
-      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <a href="dashboard.php" class="text-black-50">Dashboard</a>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <span>Manajemen</span>
@@ -30,8 +28,8 @@
       <div class="panel-body">
         <?php include '../templates/alert.php' ?>
         <div>
-          <table id="dt" class="table table-hover">
-            <thead class="header ">
+          <table id="dt" class="table table-hover table-responsive-md">
+            <thead class="elegant-color-dark">
               <tr class="text-center text-white">
                 <th>#</th>
                 <th>Nama Fasilitas</th>

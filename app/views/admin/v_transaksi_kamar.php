@@ -5,7 +5,7 @@
 
 <div class="container mt-5 mb-5">
   <h2 class="h1 text-black d-inline">KAMAR</h2>
-  <button type="button" name="tambah" class="btn btn-success rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
+  <button type="button" name="tambah" class="btn btn-success btn-md rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
@@ -15,8 +15,6 @@
     <span class="text-black-50" style="font-size:17px">
       <i class="fa fa-home fa-fw font-weight-bold"></i>
       <span class="mx-3 font-weight-bold">|</span>
-      <a href="#!" class="text-black-50">Home</a>
-      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <a href="dashboard.php" class="text-black-50">Dashboard</a>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <span>Transaksi</span>
@@ -26,9 +24,8 @@
   </div>
   <!-- /Breadcrumb -->
 
-
   <div class="bg-white shadow-sm rounded pt-1 pb-3 px-5 mt-5">
-    <select class="mdb-select md-form colorful-select dropdown-secondary bulan">
+    <select class="mdb-select md-form colorful-select dropdown-dark bulan">
       <option value="" disabled selected>Pilih Periode</option>
       <option value="0">Semua</option>
       <option value="01">Januari</option>
@@ -70,7 +67,6 @@
             <label for="tgltransaksi">Tanggal Transaksi</label>
             <input type='text' name="tgltransaksi" class="form-control" id='tgltransaksi' required readonly value="<?= date('Y-m-d') ?>">
           </div>
-
           <div class="md-form">
             <?php
             include '../../functions/auto_number.php';
@@ -81,7 +77,6 @@
             <label for="notransaksi">No.Transaksi</label>
             <input type="text" name="notransaksi" id="notransaksi" class="form-control" value="<?= $notransaksi ?>" readonly>
           </div>
-
           <select class="mdb-select md-form colorful-select dropdown-success bulan" name="periode" required>
             <option value="" disabled selected>Pilih Periode</option>
             <option value="Januari">Januari</option>
@@ -97,7 +92,6 @@
             <option value="November">November</option>
             <option value="Desember">Desember</option>
           </select>
-
           <select id="idpenyewa0" name="idpenyewa" class="mdb-select md-form colorful-select dropdown-success" required>
             <option data-live-search="true" value="" disabled selected>Pilih Nama Penyewa</option>
             <?php
@@ -107,20 +101,15 @@
               <option value="<?= $qtabel['id_penyewa'] ?>"><?= $qtabel['id_penyewa'] . ' - ' . $qtabel['nama'] ?></option>
             <?php } ?>
           </select>
-
           <div class="md-form" id="kamar">
             <input type="text" id="kodekamar" name="kodekamar" class="form-control" readonly required>
             <label for="kodekamar">Kode Kamar</label>
           </div>
-
-          <div class="form-group" id="tarif">
-            <label for="tarif">Total Bayar Sewa</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Rp.</span>
-              </div>
-              <input type="text" class="form-control uang" id="tarif" name="tarif" required readonly autocomplete="off">
+          <div class="md-form input-group" id="tarif">
+            <div class="input-group-prepend">
+              <span class="input-group-text md-addon">Rp.</span>
             </div>
+            <input type="text" class="form-control uang" id="tarif" name="tarif" required readonly autocomplete="off">
           </div>
       </div>
 
