@@ -42,8 +42,8 @@
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manajemen</a>
         <div class="dropdown-menu dropdown-dark mt-1">
-          <a href="v_kamar.php" class="dropdown-item waves-light">Kamar</a>
           <a href="v_fasilitas.php" class="dropdown-item waves-light">Fasilitas</a>
+          <a href="v_kamar.php" class="dropdown-item waves-light">Kamar</a>
         </div>
       </li>
 
@@ -56,12 +56,12 @@
       </li>
 
       <li class="nav-item mx-2">
-        <a href="dashboard.php" class="nav-link text-white orange darken-2 rounded font-weight-bold waves-light">Dashboard</a>
+        <a href="dashboard.php" class="nav-link text-white warning-color-dark rounded font-weight-bold waves-light">Dashboard</a>
       </li>
 
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transaksi</a>
-        <div class="dropdown-menu dropdown-dark mt-1">
+        <div class="dropdown-menu dropdown-warning mt-1">
           <a href="v_transaksi_kamar.php" class="dropdown-item waves-light">Kamar</a>
           <a href="v_transaksi_token.php" class="dropdown-item waves-light">Token Listrik</a>
         </div>

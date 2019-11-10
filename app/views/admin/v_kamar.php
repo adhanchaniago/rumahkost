@@ -86,15 +86,17 @@
                               <label for="kodekamar">Kode Kamar</label>
                               <input type="text" name="kodekamar" class="form-control" value="<?php echo $baris['kode_kamar']; ?>" readonly>
                             </div>
-                            <select class="mdb-select md-form colorful-select dropdown-warning" name="idfasilitas" id="idfasilitas">
-                              <?php
-                                  $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_fasilitas");
-                                  while ($fasilitas = mysqli_fetch_assoc($query_view)) {
-                                    ?>
-                                <option value="<?= $fasilitas['id_fasilitas'] ?>" <?php if ($fasilitas['id_fasilitas'] == $row['id_fasilitas']) echo "selected"; ?>> <?= $fasilitas['id_fasilitas'] . ') ' . $fasilitas['nm_fasilitas'] ?>
-                                </option>
-                              <?php } ?>
-                            </select>
+                            <div>
+                              <select class="mdb-select md-form colorful-select dropdown-warning" name="idfasilitas" id="idfasilitas">
+                                <?php
+                                    $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_fasilitas");
+                                    while ($fasilitas = mysqli_fetch_assoc($query_view)) {
+                                      ?>
+                                  <option value="<?= $fasilitas['id_fasilitas'] ?>" <?php if ($fasilitas['id_fasilitas'] == $row['id_fasilitas']) echo "selected"; ?>> <?= $fasilitas['id_fasilitas'] . ') ' . $fasilitas['nm_fasilitas'] ?>
+                                  </option>
+                                <?php } ?>
+                              </select>
+                            </div>
                             <div class="md-form input-group">
                               <div class="input-group-prepend">
                                 <span class="input-group-text md-addon">Rp.</span>
@@ -133,7 +135,7 @@
                       </div>
 
                       <div class="modal-footer flex-center">
-                        <button type="submit" class="btn btn-outline-danger">YES</button>
+                        <button type="submit" class="btn btn-outline-danger waves-effect">YES</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">NO</button>
                       </div>
 

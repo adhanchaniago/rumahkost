@@ -62,7 +62,7 @@
                       </div>
 
                       <div class="modal-body grey lighten-5">
-                        <form action="../../models/updates/u_biaya.php" method="post" role="form">
+                        <form action="../../models/updates/u_token.php" method="post" role="form">
                           <?php
                             $idbiaya = $row['id_biaya'];
                             $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_biaya WHERE id_biaya='$idbiaya'");
@@ -108,7 +108,7 @@
                       </div>
 
                       <div class="modal-body grey lighten-5">
-                        <form action="../../models/deletes/d_biaya.php" method="post" role="form">
+                        <form action="../../models/deletes/d_token.php" method="post" role="form">
                           <input type="hidden" name="idbiaya" class="form-control" value="<?php echo $row['id_biaya']; ?>">
                           <center>
                             <h4>Yakin data akan dihapus ?</h4>
@@ -146,7 +146,7 @@
       </div>
 
       <div class="modal-body grey lighten-5">
-        <form action="../../models/saves/s_biaya.php" method="post" role="form" name="forminput" id="forminput">
+        <form action="../../models/saves/s_token.php" method="post" role="form" name="forminput" id="forminput">
           <div class="md-form input-group">
             <div class="input-group-prepend">
               <span class="input-group-text md-addon">TKN</span>
