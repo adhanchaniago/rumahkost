@@ -39,16 +39,10 @@
         <td class="align-middle"><?php echo $row['no_transaksi']; ?></td>
         <td class="align-middle"><?php echo $row['periode']; ?></td>
         <td class="align-middle"><?php echo $row['nama']; ?>
-          <span class="ml-1 shadow-none badge 
-            <?php if ($row['arsip'] == '1') echo 'badge-success';
-              else if ($row['status_kamar'] == 'Terpakai') echo 'badge-danger';
-              ?>">
-          </span>
-        </td>
         <td class="align-middle"><?php echo $row['kode_kamar']; ?></td>
         <td class="align-middle">Rp. <span class="uang"><?php echo $row['tarif']; ?></span>,-</td>
         <!-- Status -->
-        <td>
+        <td class="align-middle">
           <select class="browser-default custom-select status" name="Status" transaksi="<?= $row['id_transaksi'] ?>" id="StatusTransaksi">
             <option <?php if ($row['status_bayar'] == "Lunas") {
                         echo 'selected';
