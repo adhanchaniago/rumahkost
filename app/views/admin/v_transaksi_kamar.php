@@ -25,7 +25,7 @@
   <!-- /Breadcrumb -->
 
   <div class="bg-white shadow-sm rounded pt-1 pb-3 px-5 mt-5">
-    <select class="mdb-select md-form colorful-select dropdown-dark bulan">
+    <select class="mdb-select md-form colorful-select dropdown-warning bulan">
       <option value="" disabled selected>Pilih Periode</option>
       <option value="0">Semua</option>
       <option value="01">Januari</option>
@@ -72,12 +72,12 @@
             include '../../functions/auto_number.php';
             $query = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_kamar ORDER BY no_transaksi DESC LIMIT 1");
             $latestKD = mysqli_fetch_assoc($query);
-            $notransaksi = autonumber($latestKD['no_transaksi'], 1, 3);
+            $notransaksi = autonumber($latestKD['no_transaksi'], 2, 5);
             ?>
             <label for="notransaksi">No.Transaksi</label>
             <input type="text" name="notransaksi" id="notransaksi" class="form-control" value="<?= $notransaksi ?>" readonly>
           </div>
-          <select class="mdb-select md-form colorful-select dropdown-success bulan" name="periode" required>
+          <select class="mdb-select md-form colorful-select dropdown-success" name="periode" required>
             <option value="" disabled selected>Pilih Periode</option>
             <option value="Januari">Januari</option>
             <option value="Februari">Februari</option>

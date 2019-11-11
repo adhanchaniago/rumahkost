@@ -50,9 +50,9 @@
                   <td class="align-middle"><?php echo $no++; ?></td>
                   <td class="align-middle"><?php echo $row['kode_kamar']; ?>
                     <span class="ml-1 shadow-none badge 
-                    <?php if ($row['status_kamar'] == 'Kosong') echo 'badge-success';
-                      else if ($row['status_kamar'] == 'Terpakai') echo 'badge-danger';
-                      ?>">
+                      <?php if ($row['status_kamar'] == 'Kosong') echo 'badge-success';
+                        else if ($row['status_kamar'] == 'Terisi') echo 'badge-danger';
+                        ?>">
                       <?= ucfirst($row['status_kamar']); ?>
                     </span>
                   </td>
@@ -82,22 +82,21 @@
                             <div>
                               <input type="hidden" name="idkamar" class="form-control" value="<?php echo $baris['id_kamar']; ?>" readonly>
                             </div>
-                            <div class="md-form">
+                            <div class="md-form md-outline">
                               <label for="kodekamar">Kode Kamar</label>
                               <input type="text" name="kodekamar" class="form-control" value="<?php echo $baris['kode_kamar']; ?>" readonly>
                             </div>
-                            <div>
-                              <select class="mdb-select md-form colorful-select dropdown-warning" name="idfasilitas" id="idfasilitas">
-                                <?php
-                                    $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_fasilitas");
-                                    while ($fasilitas = mysqli_fetch_assoc($query_view)) {
-                                      ?>
-                                  <option value="<?= $fasilitas['id_fasilitas'] ?>" <?php if ($fasilitas['id_fasilitas'] == $row['id_fasilitas']) echo "selected"; ?>> <?= $fasilitas['id_fasilitas'] . ') ' . $fasilitas['nm_fasilitas'] ?>
-                                  </option>
-                                <?php } ?>
-                              </select>
-                            </div>
-                            <div class="md-form input-group">
+                            <label for="idfasilitas">Fasilitas</label>
+                            <select class="custom-select browser-default" name="idfasilitas" id="idfasilitas">
+                              <?php
+                                  $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_fasilitas");
+                                  while ($fasilitas = mysqli_fetch_assoc($query_view)) {
+                                    ?>
+                                <option value="<?= $fasilitas['id_fasilitas'] ?>" <?php if ($fasilitas['id_fasilitas'] == $row['id_fasilitas']) echo "selected"; ?>> <?= $fasilitas['id_fasilitas'] . ') ' . $fasilitas['nm_fasilitas'] ?>
+                                </option>
+                              <?php } ?>
+                            </select>
+                            <div class="md-form md-outline input-group">
                               <div class="input-group-prepend">
                                 <span class="input-group-text md-addon">Rp.</span>
                               </div>
@@ -169,8 +168,12 @@
             <?php
             include '../../functions/auto_number.php';
             $query = mysqli_query($konekdb, "SELECT * FROM tbl_kamar ORDER BY kode_kamar DESC LIMIT 1");
-            $latestKD = mysqli_fetch_assoc($query);
-            $kodeKamar = autonumber($latestKD['kode_kamar'], 1, 3);
+            if ($query) {
+              $latestKD = mysqli_fetch_assoc($query);
+              $kodeKamar = autonumber($latestKD['kode_kamar'], 1, 3);
+            } else {
+              $kodeKamar = "K001";
+            }
             ?>
             <label for="kodekamar">Kode Kamar</label>
             <input type="text" name="kodekamar" id="kodekamar" class="form-control" value="<?= $kodeKamar ?>" readonly>
@@ -200,6 +203,7 @@
       </div>
     </div>
   </div>
-  <!-- Menutup modal input data -->
+</div>
+<!-- Menutup modal input data -->
 
-  <?php include '../templates/linkfooter.php' ?>
+<?php include '../templates/linkfooter.php' ?>

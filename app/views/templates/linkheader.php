@@ -18,7 +18,7 @@
   <!-- Data Tables CSS -->
   <link rel="stylesheet" href="..\..\..\public\vendor\MaterialBootstrap\css\addons\datatables.css">
 
-  <!-- Css -->
+  <!-- Css Style -->
   <link rel="stylesheet" href="..\..\..\public\css\style.css">
 
   <!-- Css Warna -->

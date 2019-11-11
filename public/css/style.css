@@ -8,16 +8,14 @@ body.modal-open {
 /* Scrollbar */
 ::-webkit-scrollbar-track {
   background-color: #F5F5F5;
-  border-radius: 10px;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
   background-color: #F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
   background-color: #FF8800;
 }
 

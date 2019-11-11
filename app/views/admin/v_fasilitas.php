@@ -68,10 +68,8 @@
                             $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_fasilitas WHERE id_fasilitas='$idfasilitas'");
                             while ($baris = mysqli_fetch_assoc($query_view)) {
                               ?>
-                            <div>
-                              <input type="hidden" name="idfasilitas" class="form-control" value="<?php echo $baris['id_fasilitas']; ?>" readonly>
-                            </div>
-                            <div class="md-form">
+                            <input type="hidden" name="idfasilitas" class="form-control" value="<?php echo $baris['id_fasilitas']; ?>" readonly>
+                            <div class="md-form md-outline">
                               <label for="nmfasilitas">Nama Fasilitas</label>
                               <input type="text" name="nmfasilitas" class="form-control" value="<?php echo $baris['nm_fasilitas']; ?>">
                             </div>

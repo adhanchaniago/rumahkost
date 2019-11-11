@@ -26,7 +26,7 @@
 
 
   <div class="bg-white shadow-sm rounded pt-1 pb-3 px-5 mt-5">
-    <select class="mdb-select md-form colorful-select dropdown-dark bulan">
+    <select class="mdb-select md-form colorful-select dropdown-warning bulan">
       <option value="" disabled selected>Pilih Periode</option>
       <option value="0">Semua</option>
       <option value="01">Januari</option>
@@ -66,6 +66,16 @@
           <div class="md-form">
             <label for="tgltransaksi">Tanggal Transaksi</label>
             <input type='text' name="tgltransaksi" class="form-control" id='tgltransaksi' required readonly value="<?= date('Y-m-d') ?>">
+          </div>
+          <div class="md-form">
+            <?php
+            include '../../functions/auto_number.php';
+            $query = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_listrik ORDER BY no_transaksi DESC LIMIT 1");
+            $latestKD = mysqli_fetch_assoc($query);
+            $notransaksi = autonumber($latestKD['no_transaksi'], 2, 5);
+            ?>
+            <label for="notransaksi">No.Transaksi</label>
+            <input type="text" name="notransaksi" id="notransaksi" class="form-control" value="<?= $notransaksi ?>" readonly>
           </div>
           <select id="idpenyewa" name="idpenyewa" class="mdb-select md-form colorful-select dropdown-success" required>
             <option data-live-search="true" value="" disabled selected>Pilih Nama Penyewa</option>

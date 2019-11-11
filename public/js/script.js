@@ -26,12 +26,23 @@ $(document).ready(function () {
 		var data = $(this).val();
 		$('.datatoken').load('data_transaksi_token.php?datatoken=' + data);
 	});
-
 	// Transaksi Kamar
 	$('.datakamar').load('data_transaksi_kamar.php');
 	$('.bulan').change(function () {
 		var data = $(this).val();
 		$('.datakamar').load('data_transaksi_kamar.php?datakamar=' + data);
+	});
+	// Arsip Kamar
+	$('.arsipkamar').load('d_transaksi_kamar.php');
+	$('.bulan').change(function () {
+		var data = $(this).val();
+		$('.arsipkamar').load('d_transaksi_kamar.php?arsipkamar=' + data);
+	});
+	// Arsip Kamar
+	$('.arsiptoken').load('d_transaksi_token.php');
+	$('.bulan').change(function () {
+		var data = $(this).val();
+		$('.arsiptoken').load('d_transaksi_token.php?arsiptoken=' + data);
 	});
 
 	// KHUSUS GET //

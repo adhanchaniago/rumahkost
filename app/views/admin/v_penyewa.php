@@ -17,7 +17,7 @@
       <span class="mx-3 font-weight-bold">|</span>
       <a href="dashboard.php" class="text-black-50">Dashboard</a>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
-      <a href="v_penyewa.php" class="font-weight-bold text-black-50">Data Penyewa</a>
+      <a href="v_penyewa.php" class="font-weight-bold text-black-50">Penyewa</a>
     </span>
   </div>
 
@@ -80,32 +80,32 @@
                             $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_penyewa WHERE id_penyewa='$idpenyewa'");
                             while ($baris = mysqli_fetch_assoc($query_view)) {
                               ?>
-                            <div class="md-form">
-                              <label for="idpenyewa">ID Penyewa</label>
-                              <input type="text" name="idpenyewa" class="form-control" value="<?php echo $baris['id_penyewa']; ?>" readonly>
-                            </div>
-                            <div class="md-form">
+                            <input type="hidden" name="idpenyewa" class="form-control" value="<?php echo $baris['id_penyewa']; ?>" readonly>
+                            <div class="md-form md-outline">
                               <label for="noktp">No.KTP</label>
                               <input type="text" name="noktp" class="form-control" value="<?php echo $baris['no_ktp']; ?>" readonly>
                             </div>
-                            <div class="md-form">
+                            <div class="md-form md-outline">
                               <label for="nama">Nama</label>
                               <input type="text" name="nama" class="form-control" value="<?php echo $baris['nama']; ?>" readonly>
                             </div>
-                            <select name="jk" id="jk" class="mdb-select md-form colorful-select dropdown-warning">
+                            <label for="jk">Jenis Kelamin</label>
+                            <select name="jk" id="jk" class="custom-select browser-default">
                               <option value="L" <?php if ($baris['jk'] == 'L') echo 'selected' ?>>L</option>
                               <option value="P" <?php if ($baris['jk'] == 'P') echo 'selected' ?>>P</option>
                             </select>
-                            <select name="pekerjaan" id="pekerjaan" class="mdb-select md-form colorful-select dropdown-warning">
+                            <label for="pekerjaan" class="mt-4">Pekerjaan</label>
+                            <select name="pekerjaan" id="pekerjaan" class="custom-select browser-default">
                               <option value="Mahasiswa" <?php if ($baris['pekerjaan'] == 'Mahasiswa') echo 'selected' ?>>Mahasiswa</option>
                               <option value="PNS" <?php if ($baris['pekerjaan'] == 'PNS') echo 'selected' ?>>PNS</option>
                               <option value="Karyawan Swasta" <?php if ($baris['pekerjaan'] == 'Karyawab Swasta') echo 'selected' ?>>Karyawan Swasta</option>
                             </select>
-                            <div class="md-form">
+                            <div class="md-form md-outline">
                               <label for="nohandphone">No.Hp</label>
                               <input type="text" name="nohandphone" class="form-control telp" value="<?php echo $baris['no_handphone']; ?>">
                             </div>
-                            <select class="mdb-select md-form colorful-select dropdown-warning" name="kodekamar" id="kodekamar">
+                            <label for="kodekamar">Kode Kamar</label>
+                            <select class="custom-select browser-default" name="kodekamar" id="kodekamar">
                               <?php
                                   $query_view = mysqli_query($konekdb, "SELECT * FROM view_kamar");
                                   while ($fasilitas = mysqli_fetch_assoc($query_view)) {
@@ -114,7 +114,7 @@
                                 </option>
                               <?php } ?>
                             </select>
-                            <div class="md-form">
+                            <div class="md-form md-outline">
                               <label for="tglmasuk">Tanggal Sewa</label>
                               <input type='text' name="tglmasuk" class="form-control datepicker" id='tglmasuk' value="<?php echo $row['tgl_masuk']; ?>">
                             </div>
@@ -144,6 +144,7 @@
                       <div class="modal-body grey lighten-5">
                         <form action="../../models/deletes/d_penyewa.php" method="post" role="form">
                           <input type="hidden" name="idpenyewa" class="form-control" value="<?php echo $row['id_penyewa']; ?>">
+                          <input type="hidden" name="kodekamar" class="form-control" value="<?php echo $row['kode_kamar']; ?>">
                           <center>
                             <h4>Yakin data akan dihapus ?</h4>
                           </center>
@@ -206,7 +207,7 @@
           <select id="kodekamar" name="kodekamar" class="mdb-select md-form colorful-select dropdown-success" required>
             <option data-live-search="true" value="" disabled selected>Pilih Kode Kamar</option>
             <?php
-            $query = "SELECT * FROM view_kamar";
+            $query = "SELECT * FROM view_kamar WHERE status_kamar='Kosong'";
             $hasil = mysqli_query($konekdb, $query);
             while ($qtabel = mysqli_fetch_assoc($hasil)) { ?>
               <option value="<?= $qtabel['kode_kamar'] ?>"><?= $qtabel['kode_kamar'] . ' - ' . $qtabel['nm_fasilitas'] ?></option>

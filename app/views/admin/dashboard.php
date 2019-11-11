@@ -11,20 +11,6 @@
         <h1 class="h1 text-center">
           <?php
           include('../../config/koneksi.php');
-          $query = mysqli_query($konekdb, "SELECT * FROM tbl_kamar");
-          ($jumlah = mysqli_num_rows($query))
-          ?>
-          <?php echo $jumlah; ?>
-        </h1>
-        <h1 class="h6 text-center">Kamar</h1>
-      </div>
-    </div>
-
-    <div class="col-md">
-      <div class="bg-white p-4 rounded shadow-sm">
-        <h1 class="h1 text-center">
-          <?php
-          include('../../config/koneksi.php');
           $query = mysqli_query($konekdb, "SELECT * FROM tbl_fasilitas");
           ($jumlah = mysqli_num_rows($query))
           ?>
@@ -39,12 +25,12 @@
         <h1 class="h1 text-center">
           <?php
           include('../../config/koneksi.php');
-          $query = mysqli_query($konekdb, "SELECT * FROM tbl_biaya");
+          $query = mysqli_query($konekdb, "SELECT * FROM tbl_kamar");
           ($jumlah = mysqli_num_rows($query))
           ?>
           <?php echo $jumlah; ?>
         </h1>
-        <h1 class="h6 text-center">Token Listrik</h1>
+        <h1 class="h6 text-center">Kamar</h1>
       </div>
     </div>
 
@@ -59,6 +45,20 @@
           <?php echo $jumlah; ?>
         </h1>
         <h1 class="h6 text-center">Penyewa</h1>
+      </div>
+    </div>
+
+    <div class="col-md">
+      <div class="bg-white p-4 rounded shadow-sm">
+        <h1 class="h1 text-center">
+          <?php
+          include('../../config/koneksi.php');
+          $query = mysqli_query($konekdb, "SELECT * FROM tbl_biaya");
+          ($jumlah = mysqli_num_rows($query))
+          ?>
+          <?php echo $jumlah; ?>
+        </h1>
+        <h1 class="h6 text-center">Token Listrik</h1>
       </div>
     </div>
 

@@ -71,15 +71,15 @@
                             <div>
                               <input type="hidden" name="idbiaya" class="form-control" value="<?php echo $baris['id_biaya']; ?>" readonly>
                             </div>
-                            <div class="md-form input-group">
+                            <div class="md-form md-outline input-group">
                               <div class="input-group-prepend">
                                 <span class="input-group-text md-addon">TKN</span>
                               </div>
                               <input type="text" name="tokenlistrik" class="form-control" value="<?php echo $baris['token_listrik']; ?>" readonly>
                             </div>
-                            <div class="md-form input-group">
+                            <div class="md-form md-outline input-group">
                               <div class="input-group-prepend">
-                                <span class="input-group-text md-addon">Rp.</span>
+                                <span class="input-group-text md-addon mr-2">Rp.</span>
                               </div>
                               <input type="text" name="jumlahbiaya" class="form-control uang" value="<?php echo $baris['jumlah_biaya']; ?>">
                             </div>

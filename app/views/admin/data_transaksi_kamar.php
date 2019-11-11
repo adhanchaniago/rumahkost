@@ -3,7 +3,7 @@
     <tr class="text-center text-white">
       <th>#</th>
       <th>Tgl Transaksi</th>
-      <th>Kode Transaksi</th>
+      <th>No.Transaksi</th>
       <th>Periode</th>
       <th>Penyewa</th>
       <th>Kode Kamar</th>
@@ -38,7 +38,13 @@
         <td class="align-middle"><?php echo $row['tgl_transaksi']; ?></td>
         <td class="align-middle"><?php echo $row['no_transaksi']; ?></td>
         <td class="align-middle"><?php echo $row['periode']; ?></td>
-        <td class="align-middle"><?php echo $row['nama']; ?></td>
+        <td class="align-middle"><?php echo $row['nama']; ?>
+          <span class="ml-1 shadow-none badge 
+            <?php if ($row['arsip'] == '1') echo 'badge-success';
+              else if ($row['status_kamar'] == 'Terpakai') echo 'badge-danger';
+              ?>">
+          </span>
+        </td>
         <td class="align-middle"><?php echo $row['kode_kamar']; ?></td>
         <td class="align-middle">Rp. <span class="uang"><?php echo $row['tarif']; ?></span>,-</td>
         <!-- Status -->
@@ -53,8 +59,8 @@
           </select>
         </td>
         <td class="align-middle">
-          <a href="../../models/updates/a_berhasil_transaksi_token.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-indigo rounded shadow-none waves-effect"><i class="fas fa-fw fa-folder-open"></i></a>
-          <a href="../../models/updates/a_batal_transaksi_token.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-danger rounded shadow-none waves-effect"><i class="fas fa-fw fa-times"></i></a>
+          <a href="../../models/updates/a_berhasil_transaksi_kamar.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-indigo rounded shadow-none waves-effect"><i class="fas fa-fw fa-folder-open"></i></a>
+          <a href="../../models/updates/a_batal_transaksi_kamar.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-danger rounded shadow-none waves-effect"><i class="fas fa-fw fa-times"></i></a>
         </td>
       </tr>
 

@@ -3,6 +3,7 @@
     <tr class="text-center text-white">
       <th>#</th>
       <th>Tgl Transaksi</th>
+      <th>No.Transaksi</th>
       <th>Penyewa</th>
       <th>Tkn Listrik</th>
       <th>Harga</th>
@@ -34,6 +35,7 @@
       <tr class="text-center">
         <td class="align-middle"><?php echo $no++; ?></td>
         <td class="align-middle"><?php echo $row['tgl_transaksi']; ?></td>
+        <td class="align-middle"><?php echo $row['no_transaksi']; ?></td>
         <td class="align-middle"><?php echo $row['nama']; ?></td>
         <td class="align-middle"><?php echo $row['token_listrik']; ?></td>
         <td class="align-middle">Rp. <span class="uang"><?php echo $row['jumlah_biaya']; ?></span>,-</td>
