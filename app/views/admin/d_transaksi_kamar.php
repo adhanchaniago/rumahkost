@@ -37,14 +37,14 @@
         <td class="align-middle"><?php echo $row['tgl_transaksi']; ?></td>
         <td class="align-middle"><?php echo $row['no_transaksi']; ?></td>
         <td class="align-middle"><?php echo $row['periode']; ?></td>
-        <td class="align-middle"><?php echo $row['nama']; ?></td>
-        <span class="ml-1 shadow-none badge 
-          <?php if ($row['arsip'] == 'Lunas') echo 'badge-success';
-            ?>">
-          <?= ucfirst($row['arsip']); ?>
-        </span>
+        <td class="align-middle"><?php echo $row['nama']; ?>
+          <span class="badge badge-primary ml-1">Lunas</span>
+        </td>
         <td class="align-middle"><?php echo $row['kode_kamar']; ?></td>
         <td class="align-middle">Rp. <span class="uang"><?php echo $row['tarif']; ?></span>,-</td>
+        <td class="align-middle">
+          <a href="#!" class="btn btn-sm btn-outline-primary rounded shadow-none waves-effect"><i class="fas fa-fw fa-print"></i></a>
+        </td>
       </tr>
 
     <?php

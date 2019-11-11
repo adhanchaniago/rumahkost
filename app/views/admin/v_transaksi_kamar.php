@@ -71,8 +71,12 @@
             <?php
             include '../../functions/auto_number.php';
             $query = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_kamar ORDER BY no_transaksi DESC LIMIT 1");
-            $latestKD = mysqli_fetch_assoc($query);
-            $notransaksi = autonumber($latestKD['no_transaksi'], 2, 5);
+            if ($query) {
+              $latestKD = mysqli_fetch_assoc($query);
+              $notransaksi = autonumber($latestKD['no_transaksi'], 2, 5);
+            } else {
+              $notransaksi = "TK00001";
+            }
             ?>
             <label for="notransaksi">No.Transaksi</label>
             <input type="text" name="notransaksi" id="notransaksi" class="form-control" value="<?= $notransaksi ?>" readonly>

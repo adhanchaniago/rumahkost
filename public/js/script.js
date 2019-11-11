@@ -19,6 +19,8 @@ $(document).ready(function () {
 	// Format No.Telpon
 	$(".telp").mask("0000-0000-00000");
 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 	// Khusus Periode
 	// Transaksi Token
 	$('.datatoken').load('data_transaksi_token.php');
@@ -44,6 +46,8 @@ $(document).ready(function () {
 		var data = $(this).val();
 		$('.arsiptoken').load('d_transaksi_token.php?arsiptoken=' + data);
 	});
+
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	// KHUSUS GET //
 	// Transaksi Listrik
