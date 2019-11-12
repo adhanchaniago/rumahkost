@@ -70,9 +70,9 @@
           <div class="md-form">
             <?php
             include '../../functions/auto_number.php';
-            $query = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_kamar ORDER BY no_transaksi DESC LIMIT 1");
-            if ($query) {
-              $latestKD = mysqli_fetch_assoc($query);
+            $query_autonumber = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_kamar ORDER BY no_transaksi DESC LIMIT 1");
+            if (mysqli_num_rows($query_autonumber) > 0) {
+              $latestKD = mysqli_fetch_assoc($query_autonumber);
               $notransaksi = autonumber($latestKD['no_transaksi'], 2, 5);
             } else {
               $notransaksi = "TK00001";

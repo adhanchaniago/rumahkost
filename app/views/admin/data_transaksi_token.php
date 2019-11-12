@@ -5,7 +5,7 @@
       <th>Tgl Transaksi</th>
       <th>No.Transaksi</th>
       <th>Penyewa</th>
-      <th>Tkn Listrik</th>
+      <th>Token Listrik</th>
       <th>Harga</th>
       <th>Status</th>
       <th>Action</th>
@@ -51,10 +51,45 @@
           </select>
         </td>
         <td class="align-middle">
-          <a href="../../models/updates/a_berhasil_transaksi_token.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-indigo rounded shadow-none waves-effect"><i class="fas fa-fw fa-folder-open"></i></a>
-          <a href="../../models/updates/a_batal_transaksi_token.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-danger rounded shadow-none waves-effect"><i class="fas fa-fw fa-times"></i></a>
+          <?php if ($row['status_bayar'] == 'Belum Lunas') : ?>
+            <a class="btn btn-sm btn-indigo rounded shadow-none waves-effect arsip disabled">
+              <i class="fas fa-fw fa-folder-open"></i>
+            </a>
+          <?php else : ?>
+            <a href="../../models/updates/a_berhasil_transaksi_token.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-indigo rounded shadow-none waves-effect">
+              <i class="fas fa-fw fa-folder-open"></i>
+            </a>
+          <?php endif; ?>
+          <button type="button" name="hapus" class="btn btn-sm btn-danger shadow-none rounded waves-effect" data-toggle="modal" data-target="#ModalHapusData<?php echo $row['id_transaksi']; ?>"><i class="fas fa-fw fa-times"></i></button>
         </td>
       </tr>
+
+      <!-- Modal Untuk hapus Data -->
+      <div class="modal fade" id="ModalHapusData<?php echo $row['id_transaksi']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content text-center">
+            <div class="modal-header">
+              <h4 class="modal-title w-100 font-weight-bold text-danger">DELETE</h4>
+            </div>
+
+            <div class="modal-body grey lighten-5">
+              <form action="../../models/deletes/d_token.php" method="post" role="form">
+                <input type="hidden" name="idbiaya" class="form-control" value="<?php echo $row['id_biaya']; ?>">
+                <center>
+                  <h4>Yakin data akan dihapus ?</h4>
+                </center>
+            </div>
+
+            <div class="modal-footer justify-content-center">
+              <button type="submit" class="btn btn-outline-danger">YES</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">NO</button>
+            </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Menutup modal hapus data -->
 
     <?php
     }
@@ -82,6 +117,9 @@
       data: {
         'status': status,
         'transaksi': transaksi
+      },
+      success: function(html) {
+        location.reload();
       }
     })
   });

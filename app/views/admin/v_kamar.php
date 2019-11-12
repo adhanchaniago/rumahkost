@@ -133,7 +133,7 @@
                           </center>
                       </div>
 
-                      <div class="modal-footer flex-center">
+                      <div class="modal-footer justify-content-center">
                         <button type="submit" class="btn btn-outline-danger waves-effect">YES</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">NO</button>
                       </div>
@@ -167,9 +167,9 @@
           <div class="md-form">
             <?php
             include '../../functions/auto_number.php';
-            $query = mysqli_query($konekdb, "SELECT * FROM tbl_kamar ORDER BY kode_kamar DESC LIMIT 1");
-            if ($query) {
-              $latestKD = mysqli_fetch_assoc($query);
+            $query_autonumber = mysqli_query($konekdb, "SELECT * FROM tbl_kamar ORDER BY kode_kamar DESC LIMIT 1");
+            if (mysqli_num_rows($query_autonumber) > 0) {
+              $latestKD = mysqli_fetch_assoc($query_autonumber);
               $kodeKamar = autonumber($latestKD['kode_kamar'], 1, 3);
             } else {
               $kodeKamar = "K001";

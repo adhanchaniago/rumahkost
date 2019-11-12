@@ -67,7 +67,7 @@
         <h1 class="h1 text-center">
           <?php
           include('../../config/koneksi.php');
-          $query = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_kamar WHERE no_transaksi != 'T000'");
+          $query = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_kamar WHERE no_transaksi != 'TK00000'");
           ($jumlah = mysqli_num_rows($query))
           ?>
           <?php echo $jumlah; ?>

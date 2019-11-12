@@ -104,7 +104,7 @@
                           </center>
                       </div>
 
-                      <div class="modal-footer flex-center">
+                      <div class="modal-footer justify-content-center">
                         <button type="submit" class="btn btn-outline-danger">YES</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">NO</button>
                       </div>

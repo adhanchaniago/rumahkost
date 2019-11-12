@@ -53,8 +53,18 @@
           </select>
         </td>
         <td class="align-middle">
-          <a href="../../models/updates/a_berhasil_transaksi_kamar.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-indigo rounded shadow-none waves-effect"><i class="fas fa-fw fa-folder-open"></i></a>
-          <a href="../../models/updates/a_batal_transaksi_kamar.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-danger rounded shadow-none waves-effect"><i class="fas fa-fw fa-times"></i></a>
+          <?php if ($row['status_bayar'] == 'Belum Lunas') : ?>
+            <a class="btn btn-sm btn-indigo rounded shadow-none waves-effect arsip disabled mb-1">
+              <i class="fas fa-fw fa-folder-open"></i>
+            </a>
+          <?php else : ?>
+            <a href="../../models/updates/a_berhasil_transaksi_kamar.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-indigo rounded shadow-none waves-effect arsip mb-1">
+              <i class="fas fa-fw fa-folder-open"></i>
+            </a>
+          <?php endif; ?>
+          <a href="#!" class="btn btn-sm btn-danger rounded shadow-none waves-effect">
+            <i class="fas fa-fw fa-times"></i>
+          </a>
         </td>
       </tr>
 
@@ -84,6 +94,9 @@
       data: {
         'status': status,
         'transaksi': transaksi
+      },
+      success: function(html) {
+        location.reload();
       }
     })
   });
