@@ -56,11 +56,11 @@
               <i class="fas fa-fw fa-folder-open"></i>
             </a>
           <?php else : ?>
-            <a href="../../models/updates/a_berhasil_transaksi_token.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-primary rounded shadow-none waves-effect">
+            <a href="../../models/updates/a_berhasil_transaksi_token.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-primary rounded shadow-none waves-effect" title="Arsip">
               <i class="fas fa-fw fa-folder-open"></i>
             </a>
           <?php endif; ?>
-          <a href="../../models/deletes/a_batal_transaksi_token.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-danger rounded shadow-none waves-effect">
+          <a href="../../models/deletes/a_batal_transaksi_token.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-danger rounded shadow-none waves-effect" title="Batal">
             <i class="fas fa-fw fa-times"></i>
           </a>
         </td>
