@@ -80,31 +80,34 @@
                             $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_penyewa WHERE id_penyewa='$idpenyewa'");
                             while ($baris = mysqli_fetch_assoc($query_view)) {
                               ?>
+
                             <input type="hidden" name="idpenyewa" class="form-control" value="<?php echo $baris['id_penyewa']; ?>" readonly>
-                            <div class="md-form md-outline">
-                              <label for="noktp">No.KTP</label>
-                              <input type="text" name="noktp" class="form-control" value="<?php echo $baris['no_ktp']; ?>" readonly>
-                            </div>
-                            <div class="md-form md-outline">
-                              <label for="nama">Nama</label>
-                              <input type="text" name="nama" class="form-control" value="<?php echo $baris['nama']; ?>" readonly>
-                            </div>
-                            <label for="jk">Jenis Kelamin</label>
+
+                            <label for="noktp">No.KTP</label>
+                            <input type="text" name="noktp" class="form-control" value="<?php echo $baris['no_ktp']; ?>" readonly>
+
+                            <label for="nama" class="mt-3">Nama</label>
+                            <input type="text" name="nama" class="form-control" value="<?php echo $baris['nama']; ?>" readonly>
+
+                            <label for="jk" class="mt-3">Jenis Kelamin</label>
                             <select name="jk" id="jk" class="custom-select browser-default">
                               <option value="L" <?php if ($baris['jk'] == 'L') echo 'selected' ?>>L</option>
                               <option value="P" <?php if ($baris['jk'] == 'P') echo 'selected' ?>>P</option>
                             </select>
-                            <label for="pekerjaan" class="mt-4">Pekerjaan</label>
+
+                            <label for="pekerjaan" class="mt-3">Pekerjaan</label>
                             <select name="pekerjaan" id="pekerjaan" class="custom-select browser-default">
                               <option value="Mahasiswa" <?php if ($baris['pekerjaan'] == 'Mahasiswa') echo 'selected' ?>>Mahasiswa</option>
                               <option value="PNS" <?php if ($baris['pekerjaan'] == 'PNS') echo 'selected' ?>>PNS</option>
                               <option value="Karyawan Swasta" <?php if ($baris['pekerjaan'] == 'Karyawab Swasta') echo 'selected' ?>>Karyawan Swasta</option>
                             </select>
-                            <div class="md-form md-outline">
-                              <label for="nohandphone">No.Hp</label>
-                              <input type="text" name="nohandphone" class="form-control telp" value="<?php echo $baris['no_handphone']; ?>">
-                            </div>
-                            <label for="kodekamar">Kode Kamar</label>
+
+
+                            <label for="nohandphone" class="mt-3">No.Hp</label>
+                            <input type="text" name="nohandphone" class="form-control telp" value="<?php echo $baris['no_handphone']; ?>">
+
+
+                            <label for="kodekamar" class="mt-3">Kode Kamar</label>
                             <select class="custom-select browser-default" name="kodekamar" id="kodekamar">
                               <?php
                                   $query_view = mysqli_query($konekdb, "SELECT * FROM view_kamar");
@@ -114,10 +117,10 @@
                                 </option>
                               <?php } ?>
                             </select>
-                            <div class="md-form md-outline">
-                              <label for="tglmasuk">Tanggal Sewa</label>
-                              <input type='text' name="tglmasuk" class="form-control datepicker" id='tglmasuk' value="<?php echo $row['tgl_masuk']; ?>">
-                            </div>
+
+                            <label for="tglmasuk" class="mt-3">Tanggal Sewa</label>
+                            <input type='text' name="tglmasuk" class="form-control datepicker" id='tglmasuk' value="<?php echo $row['tgl_masuk']; ?>">
+
                       </div>
 
                       <div class="modal-footer justify-content-center">

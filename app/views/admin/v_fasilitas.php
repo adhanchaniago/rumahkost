@@ -68,11 +68,12 @@
                             $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_fasilitas WHERE id_fasilitas='$idfasilitas'");
                             while ($baris = mysqli_fetch_assoc($query_view)) {
                               ?>
+
                             <input type="hidden" name="idfasilitas" class="form-control" value="<?php echo $baris['id_fasilitas']; ?>" readonly>
-                            <div class="md-form md-outline">
-                              <label for="nmfasilitas">Nama Fasilitas</label>
-                              <input type="text" name="nmfasilitas" class="form-control" value="<?php echo $baris['nm_fasilitas']; ?>">
-                            </div>
+
+                            <label for="nmfasilitas">Nama Fasilitas</label>
+                            <input type="text" name="nmfasilitas" class="form-control" value="<?php echo $baris['nm_fasilitas']; ?>">
+
                       </div>
 
                       <div class="modal-footer justify-content-center">
@@ -133,6 +134,7 @@
       <div class="modal-header text-center">
         <h4 class="modal-title w-100 font-weight-bold text-success">INPUT</h4>
       </div>
+
       <div class="modal-body grey lighten-5">
         <form action="../../models/saves/s_fasilitas.php" method="post" role="form" name="forminput" id="forminput">
           <div class="md-form">

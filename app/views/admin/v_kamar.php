@@ -79,14 +79,13 @@
                             $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_kamar WHERE id_kamar='$idkamar'");
                             while ($baris = mysqli_fetch_assoc($query_view)) {
                               ?>
-                            <div>
-                              <input type="hidden" name="idkamar" class="form-control" value="<?php echo $baris['id_kamar']; ?>" readonly>
-                            </div>
-                            <div class="md-form md-outline">
-                              <label for="kodekamar">Kode Kamar</label>
-                              <input type="text" name="kodekamar" class="form-control" value="<?php echo $baris['kode_kamar']; ?>" readonly>
-                            </div>
-                            <label for="idfasilitas">Fasilitas</label>
+
+                            <input type="hidden" name="idkamar" class="form-control" value="<?php echo $baris['id_kamar']; ?>" readonly>
+
+                            <label for="kodekamar">Kode Kamar</label>
+                            <input type="text" name="kodekamar" class="form-control" value="<?php echo $baris['kode_kamar']; ?>" readonly>
+
+                            <label for="idfasilitas" class="mt-3">Fasilitas</label>
                             <select class="custom-select browser-default" name="idfasilitas" id="idfasilitas">
                               <?php
                                   $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_fasilitas");
@@ -96,12 +95,15 @@
                                 </option>
                               <?php } ?>
                             </select>
-                            <div class="md-form md-outline input-group">
+
+                            <label for="tarif" class="mt-3">Tarif</label>
+                            <div class="input-group">
                               <div class="input-group-prepend">
-                                <span class="input-group-text md-addon">Rp.</span>
+                                <span class="input-group-text">Rp.</span>
                               </div>
                               <input type="text" name="tarif" class="form-control uang" value="<?php echo $baris['tarif']; ?>">
                             </div>
+
                       </div>
 
                       <div class="modal-footer justify-content-center">

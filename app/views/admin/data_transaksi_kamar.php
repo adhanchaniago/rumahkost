@@ -58,7 +58,7 @@
               <i class="fas fa-fw fa-folder-open"></i>
             </a>
           <?php else : ?>
-            <a href="../../models/updates/a_berhasil_transaksi_kamar.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-primary rounded shadow-none waves-effect arsip mb-1" data-toggle="tooltip" data-placement="right" title="Arsip">
+            <a href="../../models/updates/a_berhasil_transaksi_kamar.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-primary rounded shadow-none waves-effect arsip mb-1" title=" Arsip">
               <i class="fas fa-fw fa-folder-open"></i>
             </a>
           <?php endif; ?>
