@@ -52,15 +52,17 @@
         </td>
         <td class="align-middle">
           <?php if ($row['status_bayar'] == 'Belum Lunas') : ?>
-            <a class="btn btn-sm btn-indigo rounded shadow-none waves-effect arsip disabled">
+            <a class="btn btn-sm btn-primary rounded shadow-none waves-effect arsip disabled">
               <i class="fas fa-fw fa-folder-open"></i>
             </a>
           <?php else : ?>
-            <a href="../../models/updates/a_berhasil_transaksi_token.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-indigo rounded shadow-none waves-effect">
+            <a href="../../models/updates/a_berhasil_transaksi_token.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-primary rounded shadow-none waves-effect">
               <i class="fas fa-fw fa-folder-open"></i>
             </a>
           <?php endif; ?>
-          <button type="button" name="hapus" class="btn btn-sm btn-danger shadow-none rounded waves-effect" data-toggle="modal" data-target="#ModalHapusData<?php echo $row['id_transaksi']; ?>"><i class="fas fa-fw fa-times"></i></button>
+          <a href="../../models/deletes/a_batal_transaksi_token.php?id=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-danger rounded shadow-none waves-effect">
+            <i class="fas fa-fw fa-times"></i>
+          </a>
         </td>
       </tr>
 
