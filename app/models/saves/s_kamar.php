@@ -12,5 +12,6 @@ if (mysqli_num_rows($prosescek) > 0) {
     header('Location:../../views/admin/v_kamar.php?alert_terpakai');
 } else {
     $hasil = mysqli_query($konekdb, "INSERT INTO tbl_kamar VALUES('id_kamar','$kodekamar','$idfasilitas','$tarif','Kosong')");
-    header('Location:../../views/admin/v_kamar.php?alert_simpan');
+    buatAlert("Kamar berhasil di tambah", "success");
+    header('Location:../../views/admin/v_kamar.php');
 }

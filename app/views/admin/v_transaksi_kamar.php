@@ -45,7 +45,7 @@
   <div class="bg-white shadow-sm rounded py-4 px-5 mt-4">
     <div class="panel panel-default">
       <div class="panel-body">
-        <?php include '../templates/alert.php' ?>
+        <?php Alert() ?>
         <div class="datakamar"></div>
       </div>
     </div>

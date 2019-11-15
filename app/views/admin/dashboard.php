@@ -4,6 +4,9 @@
 <title>Dashboard</title>
 
 <div class="container mt-4 mb-4">
+  <div class="mb-3">
+    <?php Alert(); ?>
+  </div>
   <div class="row mb-4">
 
     <div class="col-md">

@@ -10,4 +10,5 @@ $tarif = $_POST['tarif'];
 
 $hasil = mysqli_query($konekdb, "INSERT INTO tbl_transaksi_kamar VALUES('','$notransaksi','$tgltransaksi','$periode','$idpenyewa','$kodekamar','$tarif','Belum Lunas',0)");
 
-header('Location:../../views/admin/v_transaksi_kamar.php?alert_simpan');
+buatAlert("Transaksi kamar berhasil di tambah", "success");
+header('Location:../../views/admin/v_transaksi_kamar.php');

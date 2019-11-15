@@ -24,7 +24,7 @@
   <div class="bg-white shadow-sm rounded py-4 px-5 mt-5">
     <div class="panel panel-default">
       <div class="panel-body">
-        <?php include '../templates/alert.php' ?>
+        <?php Alert() ?>
         <div>
           <table id="dt" class="table table-hover table-responsive-md">
             <thead class="elegant-color-dark">

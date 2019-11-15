@@ -8,5 +8,6 @@ if (mysqli_num_rows($prosescek) > 0) {
     header('Location:../../views/admin/v_fasilitas.php?alert_terpakai');
 } else {
     $hasil = mysqli_query($konekdb, "INSERT INTO tbl_fasilitas VALUES('id_fasilitas','$nmfasilitas')");
-    header('Location:../../views/admin/v_fasilitas.php?alert_simpan');
+    buatAlert("Fasilitas berhasil di tambah", "success");
+    header('Location:../../views/admin/v_fasilitas.php');
 }

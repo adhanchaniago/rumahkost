@@ -25,7 +25,7 @@
 
             <div class="dropdown-menu dropdown-menu-right dropdown-dark mt-1" aria-labelledby="kost">
               <a class="dropdown-item" href="#">Profile</a>
-              <a class="dropdown-item" href="#">Logout</a>
+              <a class="dropdown-item" href="../../models/auth/logout.php">Logout</a>
             </div>
           </li>
         </ul>
@@ -43,28 +43,28 @@
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manajemen</a>
         <div class="dropdown-menu dropdown-dark mt-1">
-          <a href="v_fasilitas" class="dropdown-item waves-light">Fasilitas</a>
-          <a href="v_kamar" class="dropdown-item waves-light">Kamar</a>
+          <a href="v_fasilitas.php" class="dropdown-item waves-light">Fasilitas</a>
+          <a href="v_kamar.php" class="dropdown-item waves-light">Kamar</a>
         </div>
       </li>
 
       <li class="nav-item mx-2">
-        <a href="v_token" class="nav-link text-white waves-light">Listrik</a>
+        <a href="v_token.php" class="nav-link text-white waves-light">Listrik</a>
       </li>
 
       <li class="nav-item mx-2">
-        <a href="v_penyewa" class="nav-link text-white waves-light">Penyewa</a>
+        <a href="v_penyewa.php" class="nav-link text-white waves-light">Penyewa</a>
       </li>
 
       <li class="nav-item mx-2">
-        <a href="dashboard" class="nav-link text-white active1 rounded font-weight-bold waves-light">Dashboard</a>
+        <a href="dashboard.php" class="nav-link text-white active1 rounded font-weight-bold waves-light">Dashboard</a>
       </li>
 
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transaksi</a>
         <div class="dropdown-menu dropdown-dark mt-1">
-          <a href="v_transaksi_kamar" class="dropdown-item waves-light">Kamar</a>
-          <a href="v_transaksi_token" class="dropdown-item waves-light">Token Listrik</a>
+          <a href="v_transaksi_kamar.php" class="dropdown-item waves-light">Kamar</a>
+          <a href="v_transaksi_token.php" class="dropdown-item waves-light">Token Listrik</a>
         </div>
       </li>
 
@@ -72,8 +72,8 @@
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Arsip</a>
         <div class="dropdown-menu dropdown-dark mt-1">
           <h6 class="dropdown-header text-center">Transaksi</h6>
-          <a href="a_transaksi_kamar" class="dropdown-item waves-light">Kamar</a>
-          <a href="a_transaksi_token" class="dropdown-item waves-light">Token Listrik</a>
+          <a href="a_transaksi_kamar.php" class="dropdown-item waves-light">Kamar</a>
+          <a href="a_transaksi_token.php" class="dropdown-item waves-light">Token Listrik</a>
         </div>
       </li>
 

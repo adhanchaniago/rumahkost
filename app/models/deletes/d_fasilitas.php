@@ -13,6 +13,7 @@ if ($double > 0) {
     $querydelete = mysqli_query($konekdb, "DELETE FROM tbl_fasilitas WHERE id_fasilitas='$idfasilitas' ");
 
     if ($querydelete) {
+        buatAlert("Fasilitas berhasil di hapus", "danger", "fas fa-trash");
         header('Location:../../views/admin/v_fasilitas.php?alert_hapus');
     } else {
         echo "ERROR, data gagal dihapus" . mysqli_error($konekdb);

@@ -11,5 +11,6 @@ if (mysqli_num_rows($prosescek) > 0) {
     header('Location:../../views/admin/v_token.php?alert_terpakai');
 } else {
     $hasil = mysqli_query($konekdb, "INSERT INTO tbl_biaya VALUES('id_biaya','$tokenlistrik','$jumlahbiaya')");
-    header('Location:../../views/admin/v_token.php?alert_simpan');
+    buatAlert("Token berhasil di tambahkan", "success");
+    header('Location:../../views/admin/v_token.php');
 }

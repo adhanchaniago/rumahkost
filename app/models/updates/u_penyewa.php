@@ -15,7 +15,8 @@ $tglexpiresewa = date('Y-m-d', strtotime('+1 month', strtotime($tglmasuk)));
 $queryupdate = mysqli_query($konekdb, "UPDATE tbl_penyewa SET no_ktp='$noktp', nama='$nama', jk='$jk', pekerjaan='$pekerjaan', no_handphone='$nohandphone', kode_kamar='$kodekamar', tgl_masuk='$tglmasuk', tgl_expiresewa='$tglexpiresewa' WHERE id_penyewa='$idpenyewa' ");
 
 if ($queryupdate) {
-  header('Location:../../views/admin/v_penyewa.php?alert_edit');
+  buatAlert("Penyewa berhasil di tambah", "warning");
+  header('Location:../../views/admin/v_penyewa.php');
 } else {
   echo "ERROR, data gagal diupdate" . mysqli_error($konekdb);
 }

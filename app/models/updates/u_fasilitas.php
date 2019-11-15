@@ -8,7 +8,8 @@ $nmfasilitas = $_POST['nmfasilitas'];
 $queryupdate = mysqli_query($konekdb, "UPDATE tbl_fasilitas SET nm_fasilitas='$nmfasilitas' WHERE id_fasilitas='$idfasilitas'");
 
 if ($queryupdate) {
-    header('Location:../../views/admin/v_fasilitas.php?alert_edit');
+    buatAlert("Fasilitas berhasil di update", "warning",);
+    header('Location:../../views/admin/v_fasilitas.php');
 } else {
     echo "ERROR, data gagal diupdate" . mysqli_error($konekdb);
 }
