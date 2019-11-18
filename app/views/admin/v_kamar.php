@@ -168,7 +168,6 @@
         <form action="../../models/saves/s_kamar.php" method="post" role="form" name="forminput" id="forminput">
           <div class="md-form">
             <?php
-            include '../../functions/auto_number.php';
             $query_autonumber = mysqli_query($konekdb, "SELECT * FROM tbl_kamar ORDER BY kode_kamar DESC LIMIT 1");
             if (mysqli_num_rows($query_autonumber) > 0) {
               $latestKD = mysqli_fetch_assoc($query_autonumber);

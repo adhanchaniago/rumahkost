@@ -86,8 +86,6 @@
     var status = $(this).val();
     var transaksi = $(this).attr('transaksi');
 
-    console.log(status);
-
     $.ajax({
       url: '../../models/saves/s_updatestatus_kamar.php',
       type: 'POST',

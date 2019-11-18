@@ -69,7 +69,6 @@
           </div>
           <div class="md-form">
             <?php
-            include '../../functions/auto_number.php';
             $query_autonumber = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_kamar ORDER BY no_transaksi DESC LIMIT 1");
             if (mysqli_num_rows($query_autonumber) > 0) {
               $latestKD = mysqli_fetch_assoc($query_autonumber);

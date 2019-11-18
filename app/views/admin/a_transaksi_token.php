@@ -20,7 +20,6 @@
   </div>
   <!-- /Breadcrumb -->
 
-
   <div class="bg-white shadow-sm rounded pt-1 pb-3 px-5 mt-5">
     <select class="mdb-select md-form colorful-select dropdown-warning bulan">
       <option value="" disabled selected>Pilih Periode</option>
@@ -42,7 +41,7 @@
   <div class="bg-white shadow-sm rounded py-4 px-5 mt-4">
     <div class="panel panel-default">
       <div class="panel-body">
-        <?php include '../templates/alert.php' ?>
+        <?php Alert() ?>
         <div class="arsiptoken"></div>
       </div>
     </div>
@@ -65,7 +64,6 @@
           </div>
           <div class="md-form">
             <?php
-            include '../../functions/auto_number.php';
             $query = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_listrik ORDER BY no_transaksi DESC LIMIT 1");
             $latestKD = mysqli_fetch_assoc($query);
             $notransaksi = autonumber($latestKD['no_transaksi'], 2, 5);

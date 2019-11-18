@@ -56,12 +56,12 @@
         <h1 class="h1 text-center">
           <?php
           include('../../config/koneksi.php');
-          $query = mysqli_query($konekdb, "SELECT * FROM tbl_biaya");
+          $query = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_listrik WHERE status_bayar != 'Belum Lunas'");
           ($jumlah = mysqli_num_rows($query))
           ?>
           <?php echo $jumlah; ?>
         </h1>
-        <h1 class="h6 text-center">Token Listrik</h1>
+        <h1 class="h6 text-center">Transaksi Listrik</h1>
       </div>
     </div>
 
@@ -75,7 +75,7 @@
           ?>
           <?php echo $jumlah; ?>
         </h1>
-        <h1 class="h6 text-center">Transaksi</h1>
+        <h1 class="h6 text-center">Transaksi Kamar</h1>
       </div>
     </div>
 
@@ -85,25 +85,25 @@
     <div class="col-md-6">
       <div class="bg-white shadow-sm rounded pt-5 pb-4">
         <h1 class="h4 text-center">Daftar Kamar</h1>
-
-        <div class="d-flex justify-content-center">
-          <div class="hr mb-4 mt-2"></div>
-        </div>
+        <hr class="w-50 border">
 
         <table class="table table-hover table-borderless">
-          <!-- <?php foreach ($data['MobilKosong'] as $mk) : ?>
+          <?php $query = mysqli_query($konekdb, "SELECT * FROM view_kamar");
+          while ($row = mysqli_fetch_array($query)) {
+            ?>
             <tr class="text-center">
-              <td><?= $mk['NoPlat']; ?></td>
-              <td><?= $mk['NmMerk']; ?></td>
-              <td><?= $mk['NmType']; ?></td>
-              <td>
-                Rp.<span class="uang"><?= $mk['HargaSewa']; ?></span>,-
+              <td class="align-middle"><?php echo $row['kode_kamar']; ?>
+                <span class="ml-1 shadow-none badge 
+                      <?php if ($row['status_kamar'] == 'Kosong') echo 'badge-success';
+                        else if ($row['status_kamar'] == 'Terisi') echo 'badge-danger';
+                        ?>">
+                  <?= ucfirst($row['status_kamar']); ?>
+                </span>
               </td>
-              <td>
-                <a href="" class="btn btn-success btn-sm shadow-none">PESAN</a>
-              </td>
+              <td class=" align-middle"><?php echo $row['nm_fasilitas']; ?></td>
+              <td class="align-middle">Rp. <span class="uang"><?php echo  $row['tarif']; ?></span>,-</td>
             </tr>
-          <?php endforeach; ?> -->
+          <?php } ?>
         </table>
       </div>
     </div>
@@ -111,21 +111,21 @@
     <div class="col-md-6">
       <div class="bg-white shadow-sm rounded pt-5 pb-4">
         <h1 class="h4 text-center">Penyewa</h1>
+        <hr class="w-50 border">
 
-        <div class="d-flex justify-content-center">
-          <div class="hr mb-4 mt-2"></div>
-        </div>
         <table class="table table-hover table-borderless">
-          <!-- <?php if ($_SESSION['Login']['RoleId'] == 1)
-                  foreach ($data['UserUn'] as $Un) : ?>
+          <?php
+          $queryp = mysqli_query($konekdb, "SELECT * FROM view_penyewa");
+          $no = 1;
+          while ($row = mysqli_fetch_array($queryp)) {
+            ?>
             <tr class="text-center">
-              <td><?= $Un['NIK'] ?> </td>
-              <td><?= $Un['Nama'] ?> </td>
-              <td>
-                <a href="<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/pending" class="btn btn-success btn-sm shadow-none">Lihat</a>
-              </td>
+              <td class="align-middle"><?php echo $row['no_ktp'] ?></td>
+              <td class="align-middle"><?php echo $row['nama'] ?></td>
+              <td class="align-middle"><?php echo $row['kode_kamar'] ?></td>
+              <td class="align-middle telp"><?php echo $row['no_handphone']; ?></td>
             </tr>
-          <?php endforeach; ?> -->
+          <?php } ?>
         </table>
       </div>
     </div>

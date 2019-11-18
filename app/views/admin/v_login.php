@@ -67,7 +67,7 @@
 <!-- Full Page Intro -->
 
 <?php
-if (!isset($_SESSION['Login'])) { } else {
+if (isset($_SESSION['Login'])) {
   header('location:dashboard.php');
 }
 ?>

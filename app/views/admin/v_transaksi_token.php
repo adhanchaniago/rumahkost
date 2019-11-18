@@ -46,7 +46,7 @@
   <div class="bg-white shadow-sm rounded py-4 px-5 mt-4">
     <div class="panel panel-default">
       <div class="panel-body">
-        <?php include '../templates/alert.php' ?>
+        <?php Alert() ?>
         <div class="datatoken"></div>
       </div>
     </div>
@@ -69,7 +69,6 @@
           </div>
           <div class="md-form">
             <?php
-            include '../../functions/auto_number.php';
             $query_autonumber = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_listrik ORDER BY no_transaksi DESC LIMIT 1");
             if (mysqli_num_rows($query_autonumber) > 0) {
               $latestKD = mysqli_fetch_assoc($query_autonumber);
