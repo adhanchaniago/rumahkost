@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION['Login'])) {
-  header('location:../admin/v_login.php');
+  header('location:../auth/v_login.php');
 }
 ?>
 
@@ -29,9 +29,9 @@ if (!isset($_SESSION['Login'])) {
               <img src="../../../public/img/fotouser/default.png" class="rounded border" height="35">
             </a>
 
-            <div class="dropdown-menu dropdown-menu-right dropdown-secondary mt-1" aria-labelledby="kost">
-              <a class="dropdown-item" href="#">Profile</a>
-              <a class="dropdown-item" href="../../models/auth/logout.php">Logout</a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-warning mt-1" aria-labelledby="kost">
+              <a class="dropdown-item deep-purple-text" href="#">Profile</a>
+              <a class="dropdown-item deep-purple-text" href="../../models/auth/logout.php">Logout</a>
             </div>
           </li>
         </ul>
@@ -48,7 +48,7 @@ if (!isset($_SESSION['Login'])) {
 
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manajemen</a>
-        <div class="dropdown-menu dropdown-warning mt-1">
+        <div class="dropdown-menu dropdown-secondary mt-1">
           <a href="v_fasilitas.php" class="dropdown-item waves-light">Fasilitas</a>
           <a href="v_kamar.php" class="dropdown-item waves-light">Kamar</a>
         </div>
@@ -63,32 +63,32 @@ if (!isset($_SESSION['Login'])) {
       </li>
 
       <li class="nav-item mx-2">
-        <a href="dashboard.php" class="nav-link text-white deep-purple rounded font-weight-bold waves-light">Dashboard</a>
+        <a href="dashboard.php" class="nav-link deep-purple-text warning-color rounded font-weight-bold waves-effect">Dashboard</a>
       </li>
 
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transaksi</a>
-        <div class="dropdown-menu dropdown-warning mt-1">
-          <a href="v_transaksi_kamar.php" class="dropdown-item waves-light">Kamar</a>
-          <a href="v_transaksi_token.php" class="dropdown-item waves-light">Token Listrik</a>
+        <div class="dropdown-menu dropdown-secondary mt-1">
+          <a href="v_transaksi_kamar.php" class="dropdown-item deep-purple-text waves-light">Kamar</a>
+          <a href="v_transaksi_token.php" class="dropdown-item deep-purple-text waves-light">Token Listrik</a>
         </div>
       </li>
 
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Arsip</a>
-        <div class="dropdown-menu dropdown-warning mt-1">
+        <div class="dropdown-menu dropdown-secondary mt-1">
           <h6 class="dropdown-header text-center">Transaksi</h6>
-          <a href="a_transaksi_kamar.php" class="dropdown-item waves-light">Kamar</a>
-          <a href="a_transaksi_token.php" class="dropdown-item waves-light">Token Listrik</a>
+          <a href="a_transaksi_kamar.php" class="dropdown-item deep-purple-text waves-light">Kamar</a>
+          <a href="a_transaksi_token.php" class="dropdown-item deep-purple-text waves-light">Token Listrik</a>
         </div>
       </li>
 
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Laporan</a>
-        <div class="dropdown-menu dropdown-warning mt-1">
-          <a href="#!" class="dropdown-item waves-light">Kamar</a>
-          <a href="#!" class="dropdown-item waves-light">Penyewa</a>
-          <a href="#!" class="dropdown-item waves-light">Token Listrik</a>
+        <div class="dropdown-menu dropdown-secondary mt-1">
+          <a href="#!" class="dropdown-item  waves-light">Kamar</a>
+          <a href="#!" class="dropdown-item  waves-light">Penyewa</a>
+          <a href="#!" class="dropdown-item  waves-light">Token Listrik</a>
         </div>
       </li>
 

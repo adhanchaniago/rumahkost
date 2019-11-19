@@ -18,10 +18,9 @@
       <div class="row">
         <!--Grid column-->
         <div class="col-md-7 mb-5 mt-md-0 mt-5 white-text text-center text-md-left fadeInLeft">
-          <h1 class="display-4 font-weight-bold">Teras Kost</h1>
+          <h1 class="display-4 font-weight-bold text-warning">Teras Kost</h1>
           <hr class="hr-light">
           <h6 class="mb-3">Teras Kost adalah salah satu rumah kost terbaik di makassar. Rumah kost ini memiliki fasilitas dan kamar yang sangat memadai, Tidak hanya memiliki fasilitas dan kamar yang bagus lokasi dari Rumah Kost ini sangatlah strategis dimana di sekitarnya banyak terdapat area perbelanjaan yang dapat membantu jika ingin mendapatkan sesuatu.</h6>
-          <a class="btn btn-outline-white btn-rounded ml-auto">Registration</a>
         </div>
         <!--Grid column-->
         <!--Grid column-->
@@ -31,7 +30,7 @@
             <div class="card-body z-depth-2">
               <!--Header-->
               <div class="text-center">
-                <h3 class="dark-grey-text">
+                <h3 class="purple-text">
                   <strong>LOGIN</strong>
                 </h3>
                 <?php Alert(); ?>

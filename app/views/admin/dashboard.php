@@ -56,8 +56,8 @@
         <h1 class="h1 text-center">
           <?php
           include('../../config/koneksi.php');
-          $query = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_listrik WHERE status_bayar != 'Belum Lunas'");
-          ($jumlah = mysqli_num_rows($query))
+          $queryL = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_listrik WHERE status_bayar != 'Lunas'");
+          ($jumlah = mysqli_num_rows($queryL))
           ?>
           <?php echo $jumlah; ?>
         </h1>
@@ -70,8 +70,8 @@
         <h1 class="h1 text-center">
           <?php
           include('../../config/koneksi.php');
-          $query = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_kamar WHERE status_bayar != 'Belum Lunas'");
-          ($jumlah = mysqli_num_rows($query))
+          $queryK = mysqli_query($konekdb, "SELECT * FROM tbl_transaksi_kamar WHERE status_bayar != 'Lunas'");
+          ($jumlah = mysqli_num_rows($queryK))
           ?>
           <?php echo $jumlah; ?>
         </h1>
