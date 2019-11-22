@@ -1,7 +1,7 @@
 <table class="table table-bordered table-responsive-md">
   <thead>
     <tr class="text-center">
-      <th>No</th>
+      <th>No.</th>
       <th>Tgl Transaksi</th>
       <th>No.Transaksi</th>
       <th>Periode</th>

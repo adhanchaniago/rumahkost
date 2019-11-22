@@ -19,7 +19,7 @@
           <table class="table table-bordered table-responsive-md">
             <thead>
               <tr class="text-center">
-                <th>No</th>
+                <th>No.</th>
                 <th>No.KTP</th>
                 <th>Nama</th>
                 <th>Jenis Kelamin</th>
