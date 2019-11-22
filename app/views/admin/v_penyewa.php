@@ -52,7 +52,9 @@
                 <tr class="text-center">
                   <td class="align-middle"><?php echo $no++ ?></td>
                   <td class="align-middle"><?php echo $row['no_ktp'] ?></td>
-                  <td class="align-middle"><?php echo $row['nama'] ?></td>
+                  <td class="align-middle"><?php echo $row['nama'] ?>
+                    <span class="badge badge-secondary shadow-none ml-1">Active</span>
+                  </td>
                   <td class="align-middle"><?php echo $row['jk'] ?></td>
                   <td class="align-middle"><?php echo $row['pekerjaan'] ?></td>
                   <td class="align-middle telp"><?php echo $row['no_handphone']; ?></td>

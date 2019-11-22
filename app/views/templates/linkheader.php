@@ -28,4 +28,4 @@ include '../../config/koneksi.php';
 
 </head>
 
-<body class="grey lighten-4">
+<body class="grey lighten-5" id="print">

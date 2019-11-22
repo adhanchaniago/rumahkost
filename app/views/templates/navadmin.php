@@ -25,7 +25,7 @@ if (!isset($_SESSION['Login'])) {
           <!-- Jika ada sesi Login -->
           <li class="nav-item dropdown ml-auto">
             <a class="nav-link waves-effect mr-1" id="kost" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span style="font-size:15px" class="text-white mr-2 font-weight-regular"><?= $_SESSION['Login']['username'] ?></span>
+              <span class="text-white mr-2 font-weight-regular"><?= $_SESSION['Login']['username'] ?></span>
               <img src="../../../public/img/fotouser/default.png" class="rounded border" height="35">
             </a>
 
@@ -42,53 +42,52 @@ if (!isset($_SESSION['Login'])) {
 <!-- /Header -->
 
 <!-- Nav -->
-<div class="menu1 shadow-sm sticky-top" style="z-index:3">
+<div id="no-print" class="menu1 shadow-sm sticky-top" style="z-index:3">
   <div class="pt-1">
     <ul class="nav md-tabs bg-transparent shadow-none justify-content-center mb-0">
 
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manajemen</a>
-        <div class="dropdown-menu dropdown-secondary mt-1">
-          <a href="v_fasilitas.php" class="dropdown-item waves-light">Fasilitas</a>
-          <a href="v_kamar.php" class="dropdown-item waves-light">Kamar</a>
+        <div class="dropdown-menu dropdown-warning mt-1">
+          <a href="v_fasilitas.php" class="dropdown-item deep-purple-text waves-light">Fasilitas</a>
+          <a href="v_kamar.php" class="dropdown-item deep-purple-text waves-light">Kamar</a>
+          <a href="v_token.php" class="dropdown-item deep-purple-text waves-light">Listrik</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown mx-2">
+        <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
+        <div class="dropdown-menu dropdown-warning mt-1">
+          <a href="v_penyewa.php" class="dropdown-item deep-purple-text waves-light">Penyewa</a>
+          <a href="../admin/l_penyewa.php" class="dropdown-item deep-purple-text waves-light">Laporan</a>
         </div>
       </li>
 
       <li class="nav-item mx-2">
-        <a href="v_token.php" class="nav-link text-white waves-light">Listrik</a>
-      </li>
-
-      <li class="nav-item mx-2">
-        <a href="v_penyewa.php" class="nav-link text-white waves-light">Penyewa</a>
-      </li>
-
-      <li class="nav-item mx-2">
-        <a href="dashboard.php" class="nav-link deep-purple-text warning-color rounded font-weight-bold waves-effect">Dashboard</a>
+        <a href="dashboard.php" class="nav-link text-white deep-purple rounded font-weight-bold waves-effect">Dashboard</a>
       </li>
 
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transaksi</a>
-        <div class="dropdown-menu dropdown-secondary mt-1">
-          <a href="v_transaksi_kamar.php" class="dropdown-item deep-purple-text waves-light">Kamar</a>
-          <a href="v_transaksi_token.php" class="dropdown-item deep-purple-text waves-light">Token Listrik</a>
+        <div class="dropdown-menu dropdown-warning mt-1">
+          <h6 class="dropdown-header text-center text-warning">Kamar</h6>
+          <a href="v_transaksi_kamar.php" class="dropdown-item deep-purple-text waves-light">Transaksi</a>
+          <a href="../admin/l_kamar_b.lunas.php" class="dropdown-item deep-purple-text waves-light">Laporan</a>
+          <h6 class="dropdown-header text-center text-warning">Listrik</h6>
+          <a href="v_transaksi_token.php" class="dropdown-item deep-purple-text waves-light">Transaksi</a>
+          <a href="../admin/l_token_b.lunas.php" class="dropdown-item deep-purple-text waves-light">Laporan</a>
         </div>
       </li>
 
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Arsip</a>
-        <div class="dropdown-menu dropdown-secondary mt-1">
-          <h6 class="dropdown-header text-center">Transaksi</h6>
-          <a href="a_transaksi_kamar.php" class="dropdown-item deep-purple-text waves-light">Kamar</a>
-          <a href="a_transaksi_token.php" class="dropdown-item deep-purple-text waves-light">Token Listrik</a>
-        </div>
-      </li>
-
-      <li class="nav-item dropdown mx-2">
-        <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Laporan</a>
-        <div class="dropdown-menu dropdown-secondary mt-1">
-          <a href="#!" class="dropdown-item  waves-light">Kamar</a>
-          <a href="#!" class="dropdown-item  waves-light">Penyewa</a>
-          <a href="#!" class="dropdown-item  waves-light">Token Listrik</a>
+        <div class="dropdown-menu dropdown-warning mt-1">
+          <h6 class="dropdown-header text-center text-warning">Kamar</h6>
+          <a href="a_transaksi_kamar.php" class="dropdown-item deep-purple-text waves-light">Arsip</a>
+          <a href="../admin/l_kamar_lunas.php" class="dropdown-item deep-purple-text waves-light">Laporan</a>
+          <h6 class="dropdown-header text-center text-warning">Listrik</h6>
+          <a href="a_transaksi_token.php" class="dropdown-item deep-purple-text waves-light">Arsip</a>
+          <a href="../admin/l_token_lunas.php" class="dropdown-item deep-purple-text waves-light">Laporan</a>
         </div>
       </li>
 

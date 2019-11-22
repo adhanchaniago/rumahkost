@@ -46,6 +46,30 @@ $(document).ready(function () {
 		var data = $(this).val();
 		$('.arsiptoken').load('d_transaksi_token.php?arsiptoken=' + data);
 	});
+	// Laporan Kamar Lunas
+	$('.kamarlunas').load('dl_kamar_lunas.php');
+	$('.bulan0').change(function () {
+		var data = $(this).val();
+		$('.kamarlunas').load('dl_kamar_lunas.php?kamarlunas=' + data);
+	});
+	// Laporan Kamar Belum Lunas
+	$('.kamarbelum').load('dl_kamar_b.lunas.php');
+	$('.bulan0').change(function () {
+		var data = $(this).val();
+		$('.kamarbelum').load('dl_kamar_b.lunas.php?kamarbelum=' + data);
+	});
+	// Laporan Token Lunas
+	$('.tokenlunas').load('dl_token_lunas.php');
+	$('.bulan0').change(function () {
+		var data = $(this).val();
+		$('.tokenlunas').load('dl_token_lunas.php?tokenlunas=' + data);
+	});
+	// Laporan Token Belum Lunas
+	$('.tokenbelum').load('dl_token_b.lunas.php');
+	$('.bulan0').change(function () {
+		var data = $(this).val();
+		$('.tokenbelum').load('dl_token_b.lunas.php?tokenbelum=' + data);
+	});
 
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

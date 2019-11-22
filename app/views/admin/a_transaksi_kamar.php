@@ -22,7 +22,7 @@
 
   <div class="bg-white shadow-sm rounded pt-1 pb-3 px-5 mt-5">
     <select class="mdb-select md-form colorful-select dropdown-warning bulan">
-      <option value="" disabled selected>Pilih Periode</option>
+      <option value="" disabled selected>Pilih Bulan Transaksi</option>
       <option value="0">Semua</option>
       <option value="01">Januari</option>
       <option value="02">Februari</option>

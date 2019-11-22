@@ -1,27 +1,20 @@
 <?php include '../templates/linkheader.php' ?>
 <?php include '../templates/navadmin.php' ?>
 
-<title>Token Listrik</title>
+<title>Laporan Token Listrik Belum Lunas</title>
 
 <div class="container mt-5 mb-5">
-  <h2 class="h1 text-black d-inline">TOKEN LISTRIK</h2>
-
-  <!-- Breadcrumb -->
-  <div class="mt-3">
-    <span class="text-black-50" style="font-size:17px">
-      <i class="fa fa-home fa-fw font-weight-bold"></i>
-      <span class="mx-3 font-weight-bold">|</span>
-      <a href="dashboard.php" class="text-black-50">Dashboard</a>
-      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
-      <span>Arsip</span>
-      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
-      <a href="v_transaksi_token.php" class="font-weight-bold text-black-50">Listrik</a>
+  <div class="text-center">
+    <h1 class="h1 text-black mb-2">LAPORAN TRANSAKSI LISTRIK BELUM LUNAS</h1>
+    <span class="h6 center" id="no-print">
+      Tekan tombol
+      <span class="badge badge-warning shadow-none">CTRL + P</span>
+      untuk mencetak
     </span>
   </div>
-  <!-- /Breadcrumb -->
 
-  <div class="bg-white shadow-sm rounded pt-1 pb-3 px-5 mt-5">
-    <select class="mdb-select md-form colorful-select dropdown-warning bulan">
+  <div class="bg-white shadow-sm rounded pt-1 pb-3 px-5 mt-5" id="no-print">
+    <select class="mdb-select md-form colorful-select dropdown-warning bulan0">
       <option value="" disabled selected>Pilih Bulan Transaksi</option>
       <option value="0">Semua</option>
       <option value="01">Januari</option>
@@ -38,10 +31,10 @@
       <option value="12">Desember</option>
     </select>
   </div>
-  <div class="bg-white shadow-sm rounded py-4 px-5 mt-4">
+  <div class="bg-white rounded py-4 px-5 mt-4">
     <div class="panel panel-default">
       <div class="panel-body">
-        <div class="arsiptoken"></div>
+        <div class="tokenbelum"></div>
       </div>
     </div>
   </div>

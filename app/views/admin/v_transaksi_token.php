@@ -5,7 +5,7 @@
 
 <div class="container mt-5 mb-5">
   <h2 class="h1 text-black d-inline">TOKEN LISTRIK</h2>
-  <button type="button" name="tambah" class="btn btn-success btn-md rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
+  <button type="button" name="tambah" class="btn btn-success btn-md rounded shadow-none mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
@@ -19,7 +19,7 @@
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <span>Transaksi</span>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
-      <a href="v_transaksi_token.php" class="font-weight-bold text-black-50">Token Listrik</a>
+      <a href="v_transaksi_token.php" class="font-weight-bold text-black-50">Listrik</a>
     </span>
   </div>
   <!-- /Breadcrumb -->
@@ -27,7 +27,7 @@
 
   <div class="bg-white shadow-sm rounded pt-1 pb-3 px-5 mt-5">
     <select class="mdb-select md-form colorful-select dropdown-warning bulan">
-      <option value="" disabled selected>Pilih Periode</option>
+      <option value="" disabled selected>Pilih Bulan Transaksi</option>
       <option value="0">Semua</option>
       <option value="01">Januari</option>
       <option value="02">Februari</option>

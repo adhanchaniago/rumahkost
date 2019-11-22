@@ -3,7 +3,28 @@ body.modal-open {
   overflow: hidden;
 }
 
-/* / Fix Scroll Modal */
+/* MEDIA PRINT */
+@media print {
+  @page {
+    size: landscape;
+    width: auto;
+    margin: 1px;
+  }
+
+  #print {
+    background-color: #fff !important;
+  }
+
+  #no-print {
+    display: none;
+  }
+
+  table,
+  table tr td,
+  table tr th {
+    font-size: 10px;
+  }
+}
 
 /* Scrollbar */
 ::-webkit-scrollbar-track {
