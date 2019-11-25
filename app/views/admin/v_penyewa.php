@@ -17,6 +17,8 @@
       <span class="mx-3 font-weight-bold">|</span>
       <a href="dashboard.php" class="text-black-50">Dashboard</a>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
+      <span>Data</span>
+      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <a href="v_penyewa.php" class="font-weight-bold text-black-50">Penyewa</a>
     </span>
   </div>
