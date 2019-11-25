@@ -1,2 +1,2 @@
 <?php
-header('Location:app/views/auth/v_login.php');
+header('Location:app/views/admin/v_login.php');

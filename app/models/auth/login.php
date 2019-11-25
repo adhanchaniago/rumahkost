@@ -8,7 +8,7 @@ $pass = mysqli_real_escape_string($konekdb, htmlentities(md5($_POST['password'])
 $sql = mysqli_query($konekdb, "SELECT * FROM tbl_login WHERE username='$user' AND password='$pass'") or die(mysql_error());
 if (mysqli_num_rows($sql) == 0) {
   buatAlert("Password / Username Anda Salah", "danger", "fas fa-info-circle");
-  header('location:../../views/auth/v_login.php');
+  header('location:../../views/admin/v_login.php');
 } else {
   $hasil = mysqli_fetch_assoc($sql);
   $_SESSION['Login'] = [
