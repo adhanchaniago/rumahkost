@@ -24,7 +24,7 @@ if (!isset($_SESSION['Login'])) {
 
           <!-- Jika ada sesi Login -->
           <li class="nav-item dropdown ml-auto">
-            <a class="nav-link waves-effect mr-1" id="kost" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link waves-effect" id="kost" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="text-white mr-2 font-weight-regular"><?= $_SESSION['Login']['username'] ?></span>
               <img src="../../../public/img/fotouser/default.png" class="rounded border" height="35">
             </a>

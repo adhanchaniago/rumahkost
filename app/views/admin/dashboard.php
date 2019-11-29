@@ -85,7 +85,7 @@
     <div class="col-md-6">
       <div class="bg-white shadow-sm rounded pt-5 pb-4">
         <h1 class="h4 text-center">Daftar Kamar</h1>
-        <hr class="w-50 border">
+        <hr class="w-50 border border-secondary">
 
         <table class="table table-hover table-borderless">
           <?php $query = mysqli_query($konekdb, "SELECT * FROM view_kamar");
@@ -111,7 +111,7 @@
     <div class="col-md-6">
       <div class="bg-white shadow-sm rounded pt-5 pb-4">
         <h1 class="h4 text-center">Penyewa</h1>
-        <hr class="w-50 border">
+        <hr class="w-50 border border-secondary">
 
         <table class="table table-hover table-borderless">
           <?php
