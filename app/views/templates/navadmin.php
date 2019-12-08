@@ -10,7 +10,7 @@ if (!isset($_SESSION['Login'])) {
     <div class="container">
 
       <a class="navbar-brand" href="#!">
-        <span style="font-size:25px" class="font-weight-bold deep-purple-text">Teras</span>
+        <span style="font-size:25px" class="font-weight-bold deep-purple-text">Terima</span>
         <span style="font-size:25px" class="font-weight-bold text-warning">Kost</span>
       </a>
 
