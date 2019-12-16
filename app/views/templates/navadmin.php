@@ -70,10 +70,10 @@ if (!isset($_SESSION['Login'])) {
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transaksi</a>
         <div class="dropdown-menu dropdown-warning mt-1">
-          <h6 class="dropdown-header text-center text-warning">Kamar</h6>
+          <h6 class="dropdown-header text-center text-dark">Kamar</h6>
           <a href="v_transaksi_kamar.php" class="dropdown-item deep-purple-text waves-light">Transaksi</a>
           <a href="../admin/l_kamar_b.lunas.php" class="dropdown-item deep-purple-text waves-light">Laporan</a>
-          <h6 class="dropdown-header text-center text-warning">Listrik</h6>
+          <h6 class="dropdown-header text-center text-dark">Listrik</h6>
           <a href="v_transaksi_token.php" class="dropdown-item deep-purple-text waves-light">Transaksi</a>
           <a href="../admin/l_token_b.lunas.php" class="dropdown-item deep-purple-text waves-light">Laporan</a>
         </div>
@@ -82,10 +82,10 @@ if (!isset($_SESSION['Login'])) {
       <li class="nav-item dropdown mx-2">
         <a class="nav-link dropdown-toggle text-white waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Arsip</a>
         <div class="dropdown-menu dropdown-warning mt-1">
-          <h6 class="dropdown-header text-center text-warning">Kamar</h6>
+          <h6 class="dropdown-header text-center text-dark">Kamar</h6>
           <a href="a_transaksi_kamar.php" class="dropdown-item deep-purple-text waves-light">Arsip</a>
           <a href="../admin/l_kamar_lunas.php" class="dropdown-item deep-purple-text waves-light">Laporan</a>
-          <h6 class="dropdown-header text-center text-warning">Listrik</h6>
+          <h6 class="dropdown-header text-center text-dark">Listrik</h6>
           <a href="a_transaksi_token.php" class="dropdown-item deep-purple-text waves-light">Arsip</a>
           <a href="../admin/l_token_lunas.php" class="dropdown-item deep-purple-text waves-light">Laporan</a>
         </div>

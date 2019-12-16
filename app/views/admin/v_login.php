@@ -66,9 +66,9 @@
 <!-- Full Page Intro -->
 
 <?php
-if (isset($_SESSION['Login'])) {
-  header('location:dashboard.php');
-}
+                if (isset($_SESSION['Login'])) {
+                  header('location:dashboard.php');
+                }
 ?>
 
 <?php include '../templates/linkfooter.php' ?>
