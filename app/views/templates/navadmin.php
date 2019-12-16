@@ -26,11 +26,10 @@ if (!isset($_SESSION['Login'])) {
           <li class="nav-item dropdown ml-auto">
             <a class="nav-link waves-effect" id="kost" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="text-white mr-2 font-weight-regular"><?= $_SESSION['Login']['username'] ?></span>
-              <img src="../../../public/img/fotouser/default.png" class="rounded border" height="35">
+              <img src="../../../public/img/fotouser/default.jpg" class="rounded border" height="35">
             </a>
 
             <div class="dropdown-menu dropdown-menu-right dropdown-warning mt-1" aria-labelledby="kost">
-              <a class="dropdown-item deep-purple-text" href="#">Profile</a>
               <a class="dropdown-item deep-purple-text" href="../../models/auth/logout.php">Logout</a>
             </div>
           </li>
