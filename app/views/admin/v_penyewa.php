@@ -131,9 +131,7 @@
                         <button type="submit" class="btn btn-warning">UPDATE</button>
                         <button type="button" class="btn btn-outline-warning waves-effect" data-dismiss="modal">NO</button>
                       </div>
-                    <?php
-                                                                                                                                                                    }
-                    ?>
+                    <?php } ?>
                     </form>
                     </div>
                   </div>
@@ -168,9 +166,7 @@
                 </div>
                 <!-- Menutup modal hapus data -->
 
-              <?php
-                                                                                                                                                                  }
-              ?>
+              <?php } ?>
             </tbody>
           </table>
         </div>
