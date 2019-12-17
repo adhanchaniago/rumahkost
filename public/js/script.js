@@ -21,7 +21,7 @@ $(document).ready(function () {
 
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-	// Khusus Periode
+	// Khusus Periode //
 	// Transaksi Token
 	$('.datatoken').load('data_transaksi_token.php');
 	$('.bulan').change(function () {
