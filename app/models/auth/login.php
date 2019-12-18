@@ -5,7 +5,7 @@ include('../../config/koneksi.php');
 $user = mysqli_real_escape_string($konekdb, htmlentities($_POST['username']));
 $pass = mysqli_real_escape_string($konekdb, htmlentities(md5($_POST['password'])));
 
-$sql = mysqli_query($konekdb, "SELECT * FROM tbl_login WHERE username='$user' AND password='$pass'") or die(mysql_error());
+$sql = mysqli_query($konekdb, "SELECT * FROM tbl_login WHERE username='$user' AND password='$pass'") or die(mysqli_error());
 if (mysqli_num_rows($sql) == 0) {
   buatAlert("Password / Username Anda Salah", "danger", "fas fa-info-circle");
   header('location:../../views/admin/v_login.php');
