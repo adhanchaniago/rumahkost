@@ -26,6 +26,11 @@ body.modal-open {
   }
 }
 
+/* Image */
+.responsive {
+  background-size: cover;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar-track {
   background-color: #F5F5F5;
