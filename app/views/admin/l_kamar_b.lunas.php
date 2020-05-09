@@ -6,10 +6,8 @@
 <div class="container mt-5 mb-5">
   <div class="text-center">
     <h1 class="h1 text-black mb-2">LAPORAN TRANSAKSI KAMAR BELUM LUNAS</h1>
-    <span class="h6 center" id="no-print">
-      Tekan tombol
-      <span class="badge badge-warning shadow-none">CTRL + P</span>
-      untuk mencetak
+    <span class="btn btn-warning shadow-none btn-sm rounded text-dark ml-3 print" id="no-print">
+      <i class="fas fa-print fa-fw"></i><span class="ml-1">Print</span>
     </span>
   </div>
 

@@ -40,7 +40,7 @@
         <td class="align-middle"><?php echo $row['token_listrik']; ?></td>
         <td class="align-middle">Rp. <span class="uang"><?php echo $row['jumlah_biaya']; ?></span>,-</td>
         <!-- Status -->
-        <td class="align-middle">
+        <td class="align-middle" style="width:16%">
           <select class="browser-default custom-select status" name="Status" transaksi="<?= $row['id_transaksi'] ?>" id="StatusTransaksi">
             <option <?php if ($row['status_bayar'] == "Lunas") {
                         echo 'selected';

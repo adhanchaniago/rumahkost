@@ -7,7 +7,7 @@
   <h2 class="h1 text-black d-inline">
     TOKEN LISTRIK
   </h2>
-  <button type="button" name="tambah" class="btn btn-success btn-md rounded mb-5 float-right" data-toggle="modal" data-target="#ModalTambahData">
+  <button type="button" name="tambah" class="btn btn-success btn-md rounded mb-5 shadow-none float-right" data-toggle="modal" data-target="#ModalTambahData">
     <i class="fas fa-fw fa-plus"></i>
     Tambah Data
   </button>
@@ -16,6 +16,8 @@
       <i class="fa fa-home fa-fw font-weight-bold"></i>
       <span class="mx-3 font-weight-bold">|</span>
       <a href="dashboard.php" class="text-black-50">Dashboard</a>
+      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
+      <span>Manajemen</span>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <a href="v_token.php" class="font-weight-bold text-black-50">Token Listrik</a>
     </span>

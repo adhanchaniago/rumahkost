@@ -17,6 +17,8 @@
       <span class="mx-3 font-weight-bold">|</span>
       <a href="dashboard.php" class="text-black-50">Dashboard</a>
       <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
+      <span>Data</span>
+      <i class="fa fa-angle-right fa-fw mx-2 font-weight-bold"></i>
       <a href="v_penyewa.php" class="font-weight-bold text-black-50">Penyewa</a>
     </span>
   </div>
@@ -48,7 +50,7 @@
               $query = mysqli_query($konekdb, "SELECT * FROM view_penyewa");
               $no = 1;
               while ($row = mysqli_fetch_array($query)) {
-                ?>
+              ?>
                 <tr class="text-center">
                   <td class="align-middle"><?php echo $no++ ?></td>
                   <td class="align-middle"><?php echo $row['no_ktp'] ?></td>
@@ -78,10 +80,10 @@
                       <div class="modal-body grey lighten-5">
                         <form action="../../models/updates/u_penyewa.php" method="post" role="form">
                           <?php
-                            $idpenyewa = $row['id_penyewa'];
-                            $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_penyewa WHERE id_penyewa='$idpenyewa'");
-                            while ($baris = mysqli_fetch_assoc($query_view)) {
-                              ?>
+                          $idpenyewa = $row['id_penyewa'];
+                          $query_view = mysqli_query($konekdb, "SELECT * FROM tbl_penyewa WHERE id_penyewa='$idpenyewa'");
+                          while ($baris = mysqli_fetch_assoc($query_view)) {
+                          ?>
 
                             <input type="hidden" name="idpenyewa" class="form-control" value="<?php echo $baris['id_penyewa']; ?>" readonly>
 
@@ -112,9 +114,9 @@
                             <label for="kodekamar" class="mt-3">Kode Kamar</label>
                             <select class="custom-select browser-default" name="kodekamar" id="kodekamar">
                               <?php
-                                  $query_view = mysqli_query($konekdb, "SELECT * FROM view_kamar");
-                                  while ($fasilitas = mysqli_fetch_assoc($query_view)) {
-                                    ?>
+                              $query_view = mysqli_query($konekdb, "SELECT * FROM view_kamar");
+                              while ($fasilitas = mysqli_fetch_assoc($query_view)) {
+                              ?>
                                 <option value="<?= $fasilitas['kode_kamar'] ?>" <?php if ($fasilitas['kode_kamar'] == $row['kode_kamar']) echo "selected"; ?>> <?= $fasilitas['kode_kamar'] . ') ' . $fasilitas['nm_fasilitas'] ?>
                                 </option>
                               <?php } ?>
@@ -129,9 +131,7 @@
                         <button type="submit" class="btn btn-warning">UPDATE</button>
                         <button type="button" class="btn btn-outline-warning waves-effect" data-dismiss="modal">NO</button>
                       </div>
-                    <?php
-                      }
-                      ?>
+                    <?php } ?>
                     </form>
                     </div>
                   </div>
@@ -166,9 +166,7 @@
                 </div>
                 <!-- Menutup modal hapus data -->
 
-              <?php
-              }
-              ?>
+              <?php } ?>
             </tbody>
           </table>
         </div>

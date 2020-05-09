@@ -1,4 +1,4 @@
 <?php
 session_start();
 session_destroy();
-header('location:../../views/auth/v_login.php');
+header('location:../../views/admin/v_login.php');
