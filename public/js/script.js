@@ -18,16 +18,11 @@ $(document).ready(function () {
 
 	// Format No.Telpon
 	$(".telp").mask("0000-0000-00000");
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-	$(".print").on("click", function () {
-			window.print();
-		})
-
-		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-		// Khusus Periode //
-		// Transaksi Token
-		$('.datatoken').load('data_transaksi_token.php');
+	// Khusus Periode //
+	// Transaksi Token
+	$('.datatoken').load('data_transaksi_token.php');
 	$('.bulan').change(function () {
 		var data = $(this).val();
 		$('.datatoken').load('data_transaksi_token.php?datatoken=' + data);
